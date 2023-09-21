@@ -1,1 +1,0 @@
-Bạn có thể xóa file .txt khi sử dụng đến folder
