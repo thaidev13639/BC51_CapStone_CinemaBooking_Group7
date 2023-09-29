@@ -1,6 +1,6 @@
 /* HEADER */
 header {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -103,6 +103,25 @@ header {
 .headerScroll {
   background-color: white;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  margin: 10px;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
 
 /* footer */
@@ -233,4 +252,41 @@ hr {
   border-radius: 15px;
   width: 100%;
   height: 50vh;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.card-body {
+  position: relative;
+}
+
+.rating {
+  margin: 0;
+  font-size: 22px;
+  overflow: hidden;
+  color: #ea4034;
+}
+
+.rating input {
+  float: right;
+  opacity: 0;
+  position: absolute;
+}
+
+.rating label {
+  float: left;
+  color: #000000;
+  text-decoration: none;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.rating label:hover {
+  color: #fb802d;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
