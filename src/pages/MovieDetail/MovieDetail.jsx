@@ -1,10 +1,10 @@
-import React from 'react'
-import TabMovie from '../Home/components/TabMovie/TabMovie'
+import React from "react";
+import TabMovie from "../Home/components/TabMovie/TabMovie";
 
-export default function DetailMovie() {
+
+export default function MovieDetail() {
   return (
-    <div>
-        <div className="py-5">
+   <div className="py-5">
   <div className="container">
     <div className="row">
       <div className="col-12">
@@ -96,10 +96,10 @@ export default function DetailMovie() {
         </div>
       </div>
     </div>
+    <TabMovie/>
   </div>
 </div>
 
-<TabMovie/>
-    </div>
-  )
+
+  );
 }
