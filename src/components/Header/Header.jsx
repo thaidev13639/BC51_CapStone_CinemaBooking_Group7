@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faClapperboard } from '@fortawesome/free-solid-svg-icons'
 import "../../css/style.css";
-import "../../sticky.js";
+// import "../../sticky.js";
 import avatar from '../../images/img_avatar.png'
 
 

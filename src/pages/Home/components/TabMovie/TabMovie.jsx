@@ -24,8 +24,6 @@ export default function TabMovie() {
              {/* <img className="" src={element.logo} alt="" />  */}
             </TabPane>
          
-        
-      
     });
   };
   return (
