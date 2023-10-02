@@ -10,7 +10,6 @@ export default function Banner() {
 
   const fetchBannerList = async () => {
     const result = await movieService.fetchMovieBannerApi();
-    console.log(result);
     setBannerList(result.data.content);
   };
 
