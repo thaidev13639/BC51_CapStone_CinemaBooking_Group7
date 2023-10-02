@@ -18,7 +18,7 @@ export default function Router() {
                     element: <Home />,
                 },
                 {
-                    path: "/movie-detail",
+                    path: "/movie-detail/:movieId",
                     element: <MovieDetail/>
                 },
                

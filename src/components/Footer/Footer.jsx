@@ -1,4 +1,8 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFilm, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faGithub, faGooglePlus, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import "../../css/style.css";
 
 
 export default function Footer() {

@@ -6,8 +6,10 @@ import { movieService } from "../../services/movie";
 import Banner from "./components/Banner/Banner";
 import { Button } from "antd/es/radio";
 import TabMovie from "./components/TabMovie/TabMovie";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
   const [movieList, setMovieList] = useState([]);
   useEffect(() => {
     fetchMovieList();
@@ -16,10 +18,11 @@ export default function Home() {
 
   const fetchMovieList = async () => {
     const result = await movieService.fetchMovieListApi();
+    console.log(result);
     setMovieList(result.data.content);
   };
 
-
+console.log(movieList);
   const renderMovieList = () => {
     return movieList.map((element) => {
       return (
@@ -36,7 +39,9 @@ export default function Home() {
             />
             <div className="card-body">
               <h5 className="card-title">{element.tenPhim}</h5>
-              <Button type="dashed">XEM CHI TIẾT </Button>
+              <Button
+              onClick={() => navigate(`/movie-detail/${element.maPhim}`)}
+              type="dashed">XEM CHI TIẾT </Button>
               <div className="rating">
                 <input name="stars" type="radio" />
                 <label>☆</label>
