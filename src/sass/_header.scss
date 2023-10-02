@@ -1,109 +1,112 @@
-
 /* HEADER */
 header {
-    background-color: rgba(0, 0, 0, 0.5);;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-  }
-  .navbar-brand:hover span,
-  .navbar-brand:hover i {
-    color: rgb(255, 3, 3);
-  }
-  .search input[type="search"] {
-    background: #fff url(../images/search.png) no-repeat 10px center;
-    border: solid 1px #eee;
-    padding: 0 10px;
-    width: 35px;
-    height: 35px;
-    -webkit-border-radius: 10em;
-    -moz-border-radius: 10em;
-    border-radius: 10em;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
-    cursor: pointer;
-  }
-  .search-right input[type="search"]:focus {
-    width: 200px;
-    padding-left: 32px;
-    color: #000;
-    background-color: #fff;
-    cursor: auto;
-    padding-right: 15px;
-  }
-  .navbar {
-    padding: 5px 1rem 0;
-  }
-  .navbar-brand {
-    text-decoration: none;
-    font-size: 32px;
-    padding: 0px;
-    position: relative;
-    color: #fff;
-    font-size: 32px;
-  }
-  .navbar-brand .icon {
-    position: absolute;
-    top: -5px;
-    left: 30px;
-    font-size: 20px;
-  }
-  #toggleBtn {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+.navbar-brand:hover span,
+.navbar-brand:hover i {
+  color: rgb(255, 3, 3);
+}
+.search input[type="search"] {
+  background: #fff url(../images/search.png) no-repeat 10px center;
+  border: solid 1px #eee;
+  padding: 0 10px;
+  width: 35px;
+  height: 35px;
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 10em;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.search-right input[type="search"]:focus {
+  width: 200px;
+  padding-left: 32px;
+  color: #000;
+  background-color: #fff;
+  cursor: auto;
+  padding-right: 15px;
+}
+.navbar {
+  padding: 5px 1rem 0;
+}
+.navbar-brand {
+  text-decoration: none;
+  font-size: 32px;
+  padding: 0px;
+  position: relative;
+  color: #fff;
+  font-size: 32px;
+}
+.navbar-brand .icon {
+  position: absolute;
+  top: -5px;
+  left: 30px;
+  font-size: 20px;
+}
+#toggleBtn {
+  color: white;
+  font-size: 25px;
+  margin-left: 10px;
+}
+#toggleBtn:hover {
+  color: #fb811e !important;
+}
+.dropdown {
+  appearance: none !important;
+}
+.dropdown-menu {
+  top: 50px;
+  left: -120px;
+}
+.dropdown-menu:focus {
+  box-shadow: none;
+}
+.dropdown-menu li a {
+  text-decoration: none;
+  color: black;
+}
+.dropdown button {
+  font-size: 30px;
+  padding-top: 5px;
+  color: rgb(255 255 255 / 50%);
+  &:hover {
     color: white;
-    font-size: 25px;
-    margin-left: 10px;
   }
-  #toggleBtn:hover {
-    color: #fb811e !important;
-  }
-  .dropdown {
-    appearance: none !important;
-  }
-  .dropdown-menu {
-    top: 50px;
-    left: -120px;
-  }
-  .dropdown-menu:focus {
-    box-shadow: none;
-  }
-  .dropdown-menu li a {
-    text-decoration: none;
-    color: black;
-  }
-  .dropdown button {
-    font-size: 30px;
-    padding-top: 5px;
-  }
-  .btn:focus {
-    box-shadow: none;
-  }
-  .dropdown-menu .active {
-    color: #fb811e;
-  }
-  .no-caret::after {
-    display: none !important;
-  }
-  .headerScroll {
-    background-color: white;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
-  }
+}
+.btn:focus {
+  box-shadow: none;
+}
+.dropdown-menu .active {
+  color: #fb811e;
+}
+.no-caret::after {
+  display: none !important;
+}
+.headerScroll {
+  background-color: white;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
+}
 
-  .chip {
-    display: inline-block;
-    padding: 0 25px;
-    height: 30px;
-    font-size: 16px;
-    line-height: 30px;
-    border-radius: 25px;
-    background-color: #f1f1f1;
-    margin: 10px;
-  }
-  
-  .chip img {
-    float: left;
-    margin: 0 10px 0 -25px;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-  }
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  margin: 10px;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
