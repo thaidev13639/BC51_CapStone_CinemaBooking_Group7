@@ -1,10 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import Header from "../../components/Header/Header";
 
-export default function AdminLaysOut() {
+export default function LoginLayout() {
   return (
     <>
+      <Header />
       <Outlet />
     </>
   );

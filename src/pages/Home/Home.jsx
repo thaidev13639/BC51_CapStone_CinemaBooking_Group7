@@ -62,6 +62,15 @@ console.log(movieList);
   };
   
   return (
-    <div>Home</div>
-  )
+    <div>
+      <Banner />
+      <div className="container">
+        <div className="py-5">
+          <div className="row mt-3 mx-auto w-75">{renderMovieList()}</div>
+        </div>
+
+        <TabMovie />
+      </div>
+    </div>
+  );
 }
