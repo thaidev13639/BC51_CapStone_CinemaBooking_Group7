@@ -1,6 +1,8 @@
 import * as yup from "yup";
 
-const rulesUser = /^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$/;
+const rulesUser = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{7,}$/;
+
+// /^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$/;
 const rulesPass =
   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{0,}$/;
 const rulesName =
@@ -9,25 +11,25 @@ const rulesName =
   "ụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s]+$";
 
 export const validate = yup.object().shape({
-  account: yup
+  taiKhoan: yup
     .string()
     .min(5)
-    .matches(rulesUser, { message: "Pls! create account stronger" })
+    .matches(rulesUser, { message: "Pls! enter valid account: name789" })
     .required("Pls! enter account"),
   matKhau: yup
     .string()
     .min(5)
-    .matches(rulesPass, { message: "Pls! create strong password" })
+    .matches(rulesPass, { message: "Pls! create strong password: Name@123" })
     .required("Pls! enter password"),
-  checkMatKhau: yup
+  confirmPassWord: yup
     .string()
-    .oneOf([yup.ref("matKhau")], "password not matched")
+    .oneOf([yup.ref("matKhau"), null], "password not matched")
     .required("Password not match"),
   email: yup
     .string()
     .email("Please enter valid email")
-    .required("Pls! enter email"),
-  soDt: yup.number().required("Pls! enter phone number"),
+    .required("Plss! enter email"),
+  soDt: yup.string().min(9).max(10).required("Pls! enter phone number"),
   hoTen: yup
     .string()
     .matches(rulesName, { message: "please enter valid Name" })
