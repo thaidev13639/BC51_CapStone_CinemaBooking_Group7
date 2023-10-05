@@ -1,0 +1,16 @@
+.header-admin {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10%;
+  .user-logo {
+    color: red;
+    font-size: 20px;
+    width: 20%;
+      margin-left: auto;
+  }
+}
+.logo-admin {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 20%;
+}

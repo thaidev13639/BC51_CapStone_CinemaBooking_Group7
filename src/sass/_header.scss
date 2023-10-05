@@ -60,8 +60,9 @@ header {
   appearance: none !important;
 }
 .dropdown-menu {
-  top: 50px;
-  left: -120px;
+  top: 50px !important;
+  left: -20px !important;
+  border-radius: 0.5rem !important;
 }
 .dropdown-menu:focus {
   box-shadow: none;
@@ -81,9 +82,14 @@ header {
 .btn:focus {
   box-shadow: none;
 }
-.dropdown-menu .active {
-  color: #fb811e;
+.dropdown-item {
+  transition: all 0.2s;
+  &:hover {
+    background-color: #fb811e !important;
+    color: white !important;
+  }
 }
+
 .no-caret::after {
   display: none !important;
 }
@@ -111,7 +117,7 @@ header {
   border-radius: 50%;
 }
 .btn-logout-home {
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 25px;
   background-color: #e1dbe7;
   color: black;
@@ -126,7 +132,7 @@ header {
 }
 .button-header {
   border-radius: 25px;
-  margin: 0 5px;
+  margin: 0 15px;
   padding: 5px 20px;
   padding-bottom: 7px;
   color: white;

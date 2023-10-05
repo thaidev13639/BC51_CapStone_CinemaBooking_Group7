@@ -8,11 +8,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { LogoutOutlined } from "@ant-design/icons";
 import { loginAction } from "../../store/actions/loginAction";
 
-export default function Header() {
+export default function Headers() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const accountState = useSelector((state) => state.userReducer);
-  console.log(accountState);
 
   const hanldLogout = () => {
     dispatch(loginAction(null));
@@ -27,11 +26,6 @@ export default function Header() {
             onClick={() => navigate("/form/login")}
             className="button-header">
             Login
-          </button>
-          <button
-            onClick={() => navigate("/form/register")}
-            className="button-header">
-            Register
           </button>
         </>
       );
@@ -73,13 +67,14 @@ export default function Header() {
                 <FontAwesomeIcon icon={faBars} /> <span className="caret" />
               </button>
               <ul className="dropdown-menu text-center">
-                <li>
-                  <NavLink to="/form/login" className="active">
-                    Login
-                  </NavLink>
+                <li className=" dropdown-item">
+                  <NavLink to="/">Home</NavLink>
                 </li>
-                <li>
+                <li className=" dropdown-item ">
                   <NavLink to="/form/register">Register</NavLink>
+                </li>
+                <li className=" dropdown-item ">
+                  <NavLink to="/admin">Admin Page</NavLink>
                 </li>
               </ul>
             </div>

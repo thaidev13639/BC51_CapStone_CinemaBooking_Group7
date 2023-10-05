@@ -70,8 +70,9 @@ header {
 }
 
 .dropdown-menu {
-  top: 50px;
-  left: -120px;
+  top: 50px !important;
+  left: -20px !important;
+  border-radius: 0.5rem !important;
 }
 
 .dropdown-menu:focus {
@@ -96,8 +97,12 @@ header {
   box-shadow: none;
 }
 
-.dropdown-menu .active {
-  color: #fb811e;
+.dropdown-item {
+  transition: all 0.2s;
+}
+.dropdown-item:hover {
+  background-color: #fb811e !important;
+  color: white !important;
 }
 
 .no-caret::after {
@@ -129,7 +134,7 @@ header {
 }
 
 .btn-logout-home {
-  font-size: 18px;
+  font-size: 15px;
   border-radius: 25px;
   background-color: #e1dbe7;
   color: black;
@@ -145,7 +150,7 @@ header {
 
 .button-header {
   border-radius: 25px;
-  margin: 0 5px;
+  margin: 0 15px;
   padding: 5px 20px;
   padding-bottom: 7px;
   color: white;
@@ -693,4 +698,25 @@ input {
     transform: scale(1.8);
     opacity: 0;
   }
+}
+label .input-erorr {
+  border: 1px solid red !important;
+}
+
+.header-admin {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10%;
+}
+.header-admin .user-logo {
+  color: red;
+  font-size: 20px;
+  width: 20%;
+  margin-left: auto;
+}
+
+.logo-admin {
+  color: white;
+  font-size: 30px;
+  margin-bottom: 20%;
 }/*# sourceMappingURL=style.css.map */

@@ -1,10 +1,10 @@
 import { useFormik } from "formik";
 import React from "react";
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { validate } from "../../ValidateYup/ValidateYup";
 import { userSvervice } from "../../services/user";
 import { notification } from "antd";
+import "../../sass/_register.scss";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ export default function Register() {
           />
           <span>Account</span>
           {form.errors.taiKhoan && form.touched.taiKhoan && (
-            <span>{form.errors.taiKhoan}</span>
+            <span className="text-danger">{form.errors.taiKhoan}</span>
           )}
         </label>
         <div className="flex-register">
@@ -69,10 +69,11 @@ export default function Register() {
               }`}
               type="password"
               required
+              autoComplete="on"
             />
             <span>Password</span>
             {form.errors.matKhau && form.touched.matKhau && (
-              <span>{form.errors.matKhau}</span>
+              <span className="text-danger">{form.errors.matKhau}</span>
             )}
           </label>
           <label>
@@ -87,10 +88,11 @@ export default function Register() {
               }`}
               type="password"
               required
+              autoComplete="on"
             />
             <span>Confirm Password</span>
             {form.errors.confirmPassWord && form.touched.confirmPassWord && (
-              <span>{form.errors.confirmPassWord}</span>
+              <span className="text-danger">{form.errors.confirmPassWord}</span>
             )}
           </label>
         </div>
@@ -106,8 +108,8 @@ export default function Register() {
             required
           />
           <span>Full Name</span>
-          {form.errors.hoTen && form.touched.Name && (
-            <span>{form.errors.hoTen}</span>
+          {form.errors.hoTen && form.touched.hoTen && (
+            <span className="text-danger">{form.errors.hoTen}</span>
           )}
         </label>
         <label>
@@ -123,7 +125,7 @@ export default function Register() {
           />
           <span>Email</span>
           {form.errors.email && form.touched.email && (
-            <span>{form.errors.email}</span>
+            <span className="text-danger">{form.errors.email}</span>
           )}
         </label>
         <label>
@@ -139,7 +141,7 @@ export default function Register() {
           />
           <span>Phone Number</span>
           {form.errors.soDt && form.touched.soDt && (
-            <span>{form.errors.soDt}</span>
+            <span className="text-danger">{form.errors.soDt}</span>
           )}
         </label>
         <button type="submit" className="submit-register">

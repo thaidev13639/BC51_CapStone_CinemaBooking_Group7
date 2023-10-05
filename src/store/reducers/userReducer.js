@@ -11,7 +11,6 @@ export const userReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case SET_INFO_USER: {
       state.userInfo = action.payload;
-      console.log(state.userInfo);
       break;
     }
   }

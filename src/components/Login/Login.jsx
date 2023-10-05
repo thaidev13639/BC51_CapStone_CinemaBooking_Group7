@@ -5,6 +5,7 @@ import { notification } from "antd";
 import { useDispatch } from "react-redux";
 import { loginAction } from "../../store/actions/loginAction";
 import { EyeOutlined } from "@ant-design/icons";
+import "../../css/style.css";
 
 export default function Login() {
   const [account, setAcount] = useState({
@@ -22,7 +23,6 @@ export default function Login() {
     });
   };
   const handlePass = () => {
-    console.log("123")
     if (pasword === "password") {
       setPassword("text");
     } else {
@@ -34,16 +34,21 @@ export default function Login() {
     try {
       const user = await userSvervice.fetLoginApi(account);
       notification.success({
-        message: "Bạn Đã Đăng Nhập Thành Công!!",
+        message: "Đăng Nhập Thành Công!!",
+        placement: "topLeft",
+        duration: 2,
       });
 
       dispatch(loginAction(user.data.content));
       localStorage.setItem("INFO_ACCOUNT", JSON.stringify(user.data.content));
       navigate("/");
+
     } catch (error) {
+      
       notification.error({
-        message:
-          error?.response?.data?.content || "Bạn Đăng Nhập Không Thành Công",
+        message: error?.response?.data?.content || "Đăng Nhập Không Thành Công",
+        placement: "topLeft",
+        duration: 2.5,
       });
     }
   };
@@ -71,6 +76,7 @@ export default function Login() {
               type={pasword}
               className="input-field-login"
               placeholder="Password"
+              autoComplete="on"
             />
             <EyeOutlined onClick={() => handlePass()} />
           </div>
@@ -83,7 +89,7 @@ export default function Login() {
               Sign Up
             </button>
           </div>
-          <button className="button3-login">Forgot Password</button>
+          <button type="button" className="button3-login">Forgot Password</button>
         </form>
       </div>
     </div>
