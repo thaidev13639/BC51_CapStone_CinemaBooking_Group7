@@ -27,7 +27,7 @@ export default function TabMovie() {
     });
   };
   return (
-    <div className=" mb-5"> 
+    <div className=" container bg-white"> 
     <Tabs tabPosition="left" style={{ height: 220 }}>
       {/* <TabPane tab="Tab 1" key="1">Content of tab 1</TabPane>
           */}
