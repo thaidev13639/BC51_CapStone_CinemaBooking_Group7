@@ -146,3 +146,8 @@
     opacity: 0;
   }
 }
+label {
+  .input-erorr {
+    border: 1px solid red !important;
+  }
+}
