@@ -9,7 +9,7 @@ export default function Footer() {
   return (
    <section className="footer">
     
-  <div className="footer-main py-4">
+  <div className="footer-main  py-4">
     <div className="container py-4">
       <div className="row footer-p">
         <div className="col-lg-4 FooterContact">

@@ -7,6 +7,8 @@ import Banner from "./components/Banner/Banner";
 import { Button } from "antd/es/radio";
 import TabMovie from "./components/TabMovie/TabMovie";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -22,7 +24,7 @@ export default function Home() {
     setMovieList(result.data.content);
   };
 
-console.log(movieList);
+  console.log(movieList);
   const renderMovieList = () => {
     return movieList.map((element) => {
       return (
@@ -31,46 +33,68 @@ console.log(movieList);
             className="card movie-card"
             style={{ marginBottom: 20, height: 500 }}
           >
-            <img
-              style={{ height: 350, objectFit: "cover" }}
-              className="card-img-top"
-              src={element.hinhAnh}
-              alt="movie"
-            />
-            <div className="card-body">
-              <h5 className="card-title">{element.tenPhim}</h5>
-              <Button
-              onClick={() => navigate(`/movie-detail/${element.maPhim}`)}
-              type="dashed">XEM CHI TIẾT </Button>
-              <div className="rating">
-                <input name="stars" type="radio" />
-                <label>☆</label>
-                <input name="stars" type="radio" />
-                <label>☆</label>
-                <input name="stars" type="radio" />
-                <label>☆</label>
-                <input name="stars" type="radio" />
-                <label>☆</label>
-                <input name="stars" type="radio" />
-                <label>☆</label>
+            <div className="movie-image">
+              <img
+                style={{ height: 350, objectFit: "cover" }}
+                className="card-img-top"
+                src={element.hinhAnh}
+                alt="movie"
+              />
+              <div className="entry-hover">
+                <div className="entry-actions">
+                  <a
+                    href="https://vimeo.com/28177848"
+                    className="btn-trailers video-player"
+                  >
+                    watch trailer
+                  </a>
+                  <a href="#order" className="btn-ticket order_btn">
+                    <FontAwesomeIcon
+                      className="logo-cart"
+                      icon={faCartShopping}
+                    />
+                    buy ticket
+                  </a>
+                  <div className="rating">
+                    <input name="stars" type="radio" />
+                    <label>☆</label>
+                    <input name="stars" type="radio" />
+                    <label>☆</label>
+                    <input name="stars" type="radio" />
+                    <label>☆</label>
+                    <input name="stars" type="radio" />
+                    <label>☆</label>
+                    <input name="stars" type="radio" />
+                    <label>☆</label>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            <div className="card-body">
+              <h6 className="card-title">{element.tenPhim}</h6>
+              <Button
+                onClick={() => navigate(`/movie-detail/${element.maPhim}`)}
+                type="dashed"
+              >
+                XEM CHI TIẾT{" "}
+              </Button>
             </div>
           </div>
         </div>
       );
     });
   };
-  
-  return (
-    <div>
-      <Banner />
-      <div className="container">
-        <div className="py-5">
-          <div className="row mt-3 mx-auto w-75">{renderMovieList()}</div>
-        </div>
 
-        <TabMovie />
+  return (
+    <div className=" bg-cover">
+      <Banner />
+
+      <div className="py-5">
+        <div className="row mt-3 mx-auto w-75">{renderMovieList()}</div>
       </div>
+
+      <TabMovie />
     </div>
   );
 }
