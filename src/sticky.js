@@ -1,14 +1,4 @@
-// var toggleBtn = document.getElementById("toggleBtn");
-// var body = document.getElementById("body");
-// toggleBtn.onclick = function () {
-//     if (toggleBtn.className == "fa-regular fa-moon") {
-//         toggleBtn.className = "fa-regular fa-sun";
-//         body.className = "dark";
-//       } else {
-//         toggleBtn.className = "fa-regular fa-moon";
-//         body.classList.remove("dark");
-// }
-// }
+
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {

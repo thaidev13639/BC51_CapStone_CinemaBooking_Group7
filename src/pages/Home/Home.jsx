@@ -12,6 +12,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const navigate = useNavigate();
+  const [search, setSearch] = useState("");
   const [movieList, setMovieList] = useState([]);
   useEffect(() => {
     fetchMovieList();
@@ -24,8 +25,18 @@ export default function Home() {
     setMovieList(result.data.content);
   };
 
-  console.log(movieList);
+  const handleChange =(event) => {
+    console.log(event.target.value);
+    setSearch({
+      keyword:event.target.value,
+    })
+  }
+
+  
   const renderMovieList = () => {
+  //   const data =this.props.userList.filter(element => {
+  //     return element.username.toLowerCase().indexOf(this.state.keyword.toLowerCase()) !==-1
+  //  })
     return movieList.map((element) => {
       return (
         <div key={element.maPhim} className="col-3">
@@ -75,9 +86,9 @@ export default function Home() {
               <h6 className="card-title">{element.tenPhim}</h6>
               <Button
                 onClick={() => navigate(`/movie-detail/${element.maPhim}`)}
-                type="dashed"
+                type="text"
               >
-                XEM CHI TIẾT{" "}
+                XEM CHI TIẾT
               </Button>
             </div>
           </div>
@@ -91,7 +102,14 @@ export default function Home() {
       <Banner />
 
       <div className="py-5">
-        <div className="row mt-3 mx-auto w-75">{renderMovieList()}</div>
+        <div className="search" style={{position:"relative",left:"200px"}}>
+            <form action="#" method="GET" className="search-right">
+              <input type="search" placeholder="Search" />
+            </form>
+          </div>
+        <div className="row mt-3 mx-auto w-75">
+          {renderMovieList()}
+        </div>
       </div>
 
       <TabMovie />
