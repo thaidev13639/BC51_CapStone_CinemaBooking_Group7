@@ -13,6 +13,8 @@ import AdminGuard from "../guards/AdminGuard";
 import NoAuthGuard from "../guards/NoAuthGuard";
 import AdminDetailFirm from "../pages/Admin/ComponentAdmin/AdminShowTime/AdminDetailFirm";
 import AdminCreateShowTime from "../pages/Admin/ComponentAdmin/AdminShowTime/AdminCreateShowTime";
+import AuthGuard from "../guards/AuthGuard";
+import Booking from "../pages/Booking/Booking";
 
 export default function Router() {
   const rooting = useRoutes([
@@ -27,6 +29,14 @@ export default function Router() {
         {
           path: "/movie-detail/:movieId",
           element: <MovieDetail />,
+        },
+        {
+          path: "/booking",
+          element: (
+            <AuthGuard>
+              <Booking />
+            </AuthGuard>
+          ),
         },
       ],
     },
