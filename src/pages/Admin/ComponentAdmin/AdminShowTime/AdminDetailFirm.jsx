@@ -1,13 +1,5 @@
 import React, { useState } from "react";
 import { Switch, Table } from "antd";
-// import type { ColumnsType } from "antd/es/table";
-
-// interface DataType {
-//   key: React.Key;
-//   name: string;
-//   age: number;
-//   address: string;
-// }
 
 const columns = [
   {

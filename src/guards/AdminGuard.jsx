@@ -18,7 +18,7 @@ export default function AdminGuard(props) {
     } else {
       if (stateUser.userInfo.maLoaiNguoiDung === "QuanTri") {
         notification.success({
-          message: `WellCome Back ${stateUser.userInfo.hoTen}`,
+          message: `Wellcome back!! ${stateUser.userInfo.hoTen}`,
           placement: "topLeft",
           duration: 1.5,
         });
