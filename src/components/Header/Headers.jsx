@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClapperboard } from "@fortawesome/free-solid-svg-icons";
 import "../../css/style.css";
@@ -9,15 +9,25 @@ import { LogoutOutlined } from "@ant-design/icons";
 import { loginAction } from "../../store/actions/loginAction";
 
 export default function Headers() {
+ 
+  const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const accountState = useSelector((state) => state.userReducer);
-
+  
   const hanldLogout = () => {
     dispatch(loginAction(null));
     localStorage.removeItem("INFO_ACCOUNT");
     navigate("/");
   };
+
+ const handleChange =(event) => {
+    console.log(event.target.value);
+    setSearch({
+      keyword:event.target.value,
+    })
+  }
+
   const renderUser = () => {
     if (!accountState.userInfo) {
       return (
@@ -54,7 +64,8 @@ export default function Headers() {
           <div className="navbar">
             <div className="search">
               <form action="#" method="GET" className="search-right">
-                <input type="search" placeholder="Search" />
+                <input type="search" 
+                placeholder="Search" />
               </form>
             </div>
             {renderUser()}
