@@ -107,7 +107,7 @@ export default function AdminDetailFirm() {
         </Table.Summary>
       )}
       // antd site header height
-      sticky={{ offsetHeader: 64 }}
+      // sticky={{ offsetHeader: 64 }}
     />
   );
 }
