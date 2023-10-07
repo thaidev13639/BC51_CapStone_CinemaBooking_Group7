@@ -2,7 +2,7 @@ import React from "react";
 import TabMovie from "../Home/components/TabMovie/TabMovie";
 import Detail from "./components/Detail/Detail";
 import ShowTimes from "./components/ShowTimes/ShowTimes";
-import 'animate.css'
+// import 'animate.css'
 
 export default function MovieDetail() {
   return (

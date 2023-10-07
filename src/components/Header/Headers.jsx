@@ -9,24 +9,23 @@ import { LogoutOutlined } from "@ant-design/icons";
 import { loginAction } from "../../store/actions/loginAction";
 
 export default function Headers() {
- 
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const accountState = useSelector((state) => state.userReducer);
-  
+
   const hanldLogout = () => {
     dispatch(loginAction(null));
     localStorage.removeItem("INFO_ACCOUNT");
     navigate("/");
   };
 
- const handleChange =(event) => {
+  const handleChange = (event) => {
     console.log(event.target.value);
     setSearch({
-      keyword:event.target.value,
-    })
-  }
+      keyword: event.target.value,
+    });
+  };
 
   const renderUser = () => {
     if (!accountState.userInfo) {
@@ -36,6 +35,11 @@ export default function Headers() {
             onClick={() => navigate("/form/login")}
             className="button-header">
             Login
+          </button>
+          <button
+            onClick={() => navigate("/form/register")}
+            className="button-header">
+            Register
           </button>
         </>
       );
@@ -53,10 +57,10 @@ export default function Headers() {
     );
   };
   return (
-    <header id="header">
+    <header id="header-Navbar">
       <div className="header__content container m-auto">
         <nav className="navbar justify-content-between navbar-expand-md navbar-dark text-black">
-          <NavLink id="logo" className="navbar-brand" to="/">
+          <NavLink id="logo-Navbar" className="navbar-brand" to="/">
             <span>Cinema</span>{" "}
             <FontAwesomeIcon className="icon" icon={faClapperboard} />
           </NavLink>
@@ -64,14 +68,13 @@ export default function Headers() {
           <div className="navbar">
             <div className="search">
               <form action="#" method="GET" className="search-right">
-                <input type="search" 
-                placeholder="Search" />
+                <input type="search" placeholder="Search" />
               </form>
             </div>
             {renderUser()}
             <div className="dropdown">
               <button
-                id="dropDown"
+                id="dropDown-Navbar"
                 className="btn btn-default  dropdown-toggle  no-caret"
                 type="button"
                 data-toggle="dropdown">
