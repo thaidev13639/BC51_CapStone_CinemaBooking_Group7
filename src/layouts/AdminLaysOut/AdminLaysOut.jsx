@@ -1,6 +1,9 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "../../css/style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import avatar from "../../images/img_avatar.png";
+import { faClapperboard } from "@fortawesome/free-solid-svg-icons";
 import {
   DesktopOutlined,
   FileOutlined,
@@ -8,7 +11,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, notification, theme } from "antd";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginAction } from "../../store/actions/loginAction";
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -16,6 +19,8 @@ export default function AdminLaysOut() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [collapsed, setCollapsed] = useState(false);
+  const accountState = useSelector((state) => state.userReducer);
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -30,10 +35,10 @@ export default function AdminLaysOut() {
   }
   const items = [
     getItem("Home", "/", <PieChartOutlined />),
-    getItem("User", "/admin/user", <DesktopOutlined />),
-    getItem("Firm", "/admin", <UserOutlined />, [
-      getItem("Detail Firm", "/admin/detail-firm"),
-      getItem("ShowTime Firm", "/admin/showtime"),
+    getItem("User", "/admin/user", <UserOutlined />),
+    getItem("Firm", "/admin", <DesktopOutlined />, [
+      getItem("Detail Film", "/admin/detail-film"),
+      getItem("Add Film", "/admin/add-film"),
     ]),
     getItem("Logout", "logout", <FileOutlined />),
   ];
@@ -48,7 +53,10 @@ export default function AdminLaysOut() {
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}>
         <div className="demo-logo-vertical" />
-        <div className="logo-admin">LOGO</div>
+        <div className="logo-admin p-3">
+          <span>Cinema</span>{" "}
+          <FontAwesomeIcon className="icon" icon={faClapperboard} />
+        </div>
         <Menu
           onClick={({ key }) => {
             if (key === "logout") {
@@ -79,10 +87,13 @@ export default function AdminLaysOut() {
             padding: 0,
             background: colorBgContainer,
           }}>
-          {/* <HeaderAdmin /> */}
-          <div className="header-admin">
-            {/* <div>Header</div> */}
-            <div className="user-logo">User</div>
+          <div className="header-admin container">
+            <div className="user-logo">
+              <div className="chip" style={{ cursor: "pointer" }}>
+                <img src={avatar} alt="Person" width={96} height={96} />
+                {accountState?.userInfo?.hoTen}
+              </div>
+            </div>
           </div>
         </Header>
         <Content
@@ -103,7 +114,7 @@ export default function AdminLaysOut() {
           style={{
             textAlign: "center",
           }}>
-          Ant Design ©2023 Created by Ant UED
+          Movie ©2023 Created by Hoang Anh and Thai
         </Footer>
       </Layout>
     </Layout>
