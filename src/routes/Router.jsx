@@ -3,7 +3,7 @@ import { useRoutes } from "react-router-dom";
 import HomeLaysOut from "../layouts/HomeLaysOut/HomeLaysOut";
 import Home from "../pages/Home/Home";
 import AdminLaysOut from "../layouts/AdminLaysOut/AdminLaysOut";
-import AdminDetail from "../pages/Admin/AdminDetail";
+import AdminCreateShowTime from "../pages/Admin/ComponentAdmin/AdminShowTime/AdminCreateShowTime";
 import MovieDetail from "../pages/MovieDetail/MovieDetail";
 import Login from "../components/Login/Login";
 import LoginLayout from "../layouts/LoginLayout/LoginLayout";
@@ -12,9 +12,10 @@ import AdminUser from "../pages/Admin/ComponentAdmin/AdminUser/AdminUser";
 import AdminGuard from "../guards/AdminGuard";
 import NoAuthGuard from "../guards/NoAuthGuard";
 import AdminDetailFirm from "../pages/Admin/ComponentAdmin/AdminShowTime/AdminDetailFirm";
-import AdminCreateShowTime from "../pages/Admin/ComponentAdmin/AdminShowTime/AdminCreateShowTime";
+import AdminCreateFilm from "../pages/Admin/ComponentAdmin/AdminShowTime/AdminCreateFilm";
 import AuthGuard from "../guards/AuthGuard";
 import Booking from "../pages/Booking/Booking";
+import AdminEditFilm from "../pages/Admin/ComponentAdmin/AdminShowTime/AdminEditFlim";
 
 export default function Router() {
   const rooting = useRoutes([
@@ -49,20 +50,24 @@ export default function Router() {
       ),
       children: [
         {
-          path: "/admin",
-          element: <AdminDetail />,
+          path: "/admin/detail-film",
+          element: <AdminDetailFirm />,
         },
         {
           path: "/admin/user",
           element: <AdminUser />,
         },
         {
-          path: "/admin/detail-firm",
-          element: <AdminDetailFirm />,
+          path: "/admin/add-film",
+          element: <AdminCreateFilm />,
         },
         {
-          path: "/admin/showtime",
-          element: <AdminCreateShowTime />,
+          path: "/admin/edit-film/:id",
+          element: <AdminEditFilm />,
+        },
+        {
+          path: "/admin/create-show-time/:id/:tenPhim",
+          element: <AdminCreateShowTime />
         },
       ],
     },

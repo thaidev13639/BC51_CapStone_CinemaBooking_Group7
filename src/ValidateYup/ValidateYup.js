@@ -35,3 +35,21 @@ export const validate = yup.object().shape({
     .matches(rulesName, { message: "please enter valid Name" })
     .required("Pls! enter fullname"),
 });
+
+export const validationAddMovie = yup.object().shape({
+  tenPhim: yup.string().required(" (*) vui lòng nhập tên phim"),
+  trailer: yup.string().required(" (*) vui lòng không bỏ trống"),
+  moTa: yup.string().required(" (*) vui lòng nhập mô tả"),
+  ngayKhoiChieu: yup.string().required(" (*) vui lòng không bỏ trống"),
+  danhGia: yup.number().min(0).max(10).required(" (*) vui lòng nhập đánh giá"),
+});
+
+export const validationAddShowTime = yup.object().shape({
+  maRap: yup.string().required(" (*) vui lòng nhập mô tả"),
+  ngayGioChieu: yup.string().required(" (*) vui lòng không bỏ trống"),
+  giaVe: yup
+    .number()
+    .min(75000)
+    .max(150000)
+    .required(" (*) vui lòng nhập đánh giá"),
+});
