@@ -62,9 +62,9 @@ export default function ShowTimes() {
                     {element.lichChieuPhim.map((element) => {
                       return (
                         <div key={element.maRap} className="col-3">
-                          <a  className="timeDate text-primary"chref="#">
+                          <Link  className="timeDate text-primary" to={`/booking/${element.maLichChieu}`}>
                             {formatDate(element.ngayChieuGioChieu)}
-                          </a>
+                          </Link>
                         </div>
                       );
                     })}
