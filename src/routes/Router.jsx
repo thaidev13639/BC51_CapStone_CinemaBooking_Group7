@@ -32,7 +32,7 @@ export default function Router() {
           element: <MovieDetail />,
         },
         {
-          path: "/booking",
+          path: "/booking/:id",
           element: (
             <AuthGuard>
               <Booking />
