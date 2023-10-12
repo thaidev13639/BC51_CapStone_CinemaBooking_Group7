@@ -100,12 +100,14 @@ export default function Home() {
 
               <div className="card-body">
                 <h6 className="card-title">{element.tenPhim}</h6>
-                <Button
+                <button className="button-17" role="button"
                   onClick={() => navigate(`/movie-detail/${element.maPhim}`)}
                   type="text"
                 >
                   XEM CHI TIẾT
-                </Button>
+                </button>
+
+                
               </div>
             </div>
           </div>
