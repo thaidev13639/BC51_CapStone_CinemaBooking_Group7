@@ -3,7 +3,7 @@ import { requestApi } from "../configs/configApi";
 class MovieService {
   fetchMovieListApi() {
     return requestApi({
-      url: "/QuanLyPhim/LayDanhSachPhim?maNhom=GP03",
+      url: "/QuanLyPhim/LayDanhSachPhim?maNhom=GP12",
       method: "GET",
     });
   }
@@ -26,7 +26,7 @@ class MovieService {
 
   fetchMovieTabApi() {
     return requestApi({
-      url: "/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP03",
+      url: "/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP12",
       method: "GET",
     });
   }

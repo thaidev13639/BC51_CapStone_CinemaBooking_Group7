@@ -39,29 +39,29 @@ export default function Detail() {
         <p>{formatDate(detail.ngayKhoiChieu)}</p>
 
         
-          <div class="film-item-but">
+          <div className="film-item-but">
             <a
-              class="trailler-btn"
+              className="trailler-btn"
               href={detail.trailer}
             >
               TRAILER
             </a>
            
             <a
-              class="cart-btn fontsize14"
+              className="cart-btn fontsize14"
               href="#"
               onClick={showHide}
             >
               Mua vé
             </a>
-            <ul class="l-social">
+            <ul className="l-social">
               <li>Chia sẻ</li>
-              <li class="l-facebook">
+              <li className="l-facebook">
                 <a href="#">
                   Facebook
                 </a>
               </li>
-              <li class="l-google">
+              <li className="l-google">
                 <a href="#">
                   Google
                 </a>

@@ -12,16 +12,14 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { removeVietnameseTones } from "../../utils/removeVietnames";
 import { LoadingContext } from "../../contexts/LoadingContext/LoadingContext";
 
-
 export default function Home() {
   const navigate = useNavigate();
   const [search, setSearch] = useState({});
   const [movieList, setMovieList] = useState([]);
- // const [loadingState,setLoadingState] = useContext(LoadingContext);
+  // const [loadingState,setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchMovieList();
-   
   }, []);
   const fetchMovieList = async () => {
     // setLoadingState({ isLoading : true});
@@ -68,7 +66,6 @@ export default function Home() {
                   className="card-img-top"
                   src={element.hinhAnh}
                   alt="movie"
-                  
                 />
                 <div className="entry-hover">
                   <div className="entry-actions">
@@ -102,15 +99,15 @@ export default function Home() {
               </div>
 
               <div className="card-body">
-                <h6 className="card-title">{element.tenPhim}</h6>
-                <button className="button-17" role="button"
+                <h4 className="card-title title">{element.tenPhim}</h4>
+                <button
+                  className="button-17"
+                  role="button"
                   onClick={() => navigate(`/movie-detail/${element.maPhim}`)}
                   type="text"
                 >
                   XEM CHI TIẾT
                 </button>
-
-                
               </div>
             </div>
           </div>
@@ -137,7 +134,9 @@ export default function Home() {
         <div className="row mt-3 mx-auto w-75">{renderMovieList()}</div>
       </div>
 
-      <TabMovie />
+    
+        <TabMovie />
+      
     </div>
   );
 }

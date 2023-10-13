@@ -72,6 +72,7 @@ export default function AdminEditFilm() {
         },
         validationSchema: validationAddMovie,
         onSubmit: (values) => {
+            
             console.log(values)
             values.maNhom = "GP03"
             let formData = new FormData();

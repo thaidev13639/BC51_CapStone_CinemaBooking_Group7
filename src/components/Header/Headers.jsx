@@ -33,12 +33,14 @@ export default function Headers() {
         <>
           <button
             onClick={() => navigate("/form/login")}
-            className="button-header">
+            className="button-header"
+          >
             Login
           </button>
           <button
             onClick={() => navigate("/form/register")}
-            className="button-header">
+            className="button-header"
+          >
             Register
           </button>
         </>
@@ -46,7 +48,7 @@ export default function Headers() {
     }
     return (
       <>
-        <div className="chip">
+        <div className="chip" onClick={() => navigate("/thongtincanhan")}>
           <img src={avatar} alt="Person" width={96} height={96} />
           {accountState?.userInfo?.hoTen}
         </div>
@@ -66,16 +68,15 @@ export default function Headers() {
           </NavLink>
 
           <div className="navbar">
-            <div className="search">
-             
-            </div>
+            <div className="search"></div>
             {renderUser()}
             <div className="dropdown">
               <button
                 id="dropDown-Navbar"
                 className="btn btn-default  dropdown-toggle  no-caret"
                 type="button"
-                data-toggle="dropdown">
+                data-toggle="dropdown"
+              >
                 <FontAwesomeIcon icon={faBars} /> <span className="caret" />
               </button>
               <ul className="dropdown-menu text-center">

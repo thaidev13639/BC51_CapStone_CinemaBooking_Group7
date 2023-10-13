@@ -21,10 +21,17 @@ class UserService {
       data,
     });
   };
-  fetchUserInf = (data) =>{
+  fetchUserTicket = () =>{
     return requestApi({
       url: "/QuanLyNguoiDung/ThongTinTaiKhoan",
       method: "POST",
+    });
+  }
+  
+  fetchUserInfo = (data) =>{
+    return requestApi({
+      url: "/QuanLyNguoiDung/CapNhatThongTinNguoiDung",
+      method: "PUT",
     });
   }
 }

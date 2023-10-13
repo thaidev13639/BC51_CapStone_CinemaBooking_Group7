@@ -42,7 +42,12 @@ export default function Router() {
         },
         {
           path: "/thongtincanhan",
-          element: <Userinfo />,
+          element: 
+          (
+            <AuthGuard>
+          <Userinfo />,
+          </AuthGuard>
+          ),
         },
       ],
     },

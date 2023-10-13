@@ -5,13 +5,13 @@ import { filter, sumBy } from "lodash";
 import { Alert, Button, Popconfirm, notification } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCouch } from "@fortawesome/free-solid-svg-icons";
-import { LoadingContext } from "../../contexts/LoadingContext/LoadingContext";
+// import { LoadingContext } from "../../contexts/LoadingContext/LoadingContext";
 
 export default function Booking() {
   const params = useParams();
   const [movieDetail, setMovieDetail] = useState({});
   const [chairList, setChairList] = useState([]);
-  const [loadingState,setLoadingState] = useContext(LoadingContext);
+  // const [loadingState,setLoadingState] = useContext(LoadingContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Booking() {
   }, []);
 
   const fetchTicketDetail = async () => {
-    setLoadingState({ isLoading : true});
+    // setLoadingState({ isLoading : true});
     const result = await ticketService.fetchTicketDetailApi(params.id);
     setMovieDetail(result.data.content.thongTinPhim);
     setChairList(
@@ -36,7 +36,7 @@ export default function Booking() {
       })
     );
     console.log(result);
-    setLoadingState({ isLoading : false});
+    // setLoadingState({ isLoading : false});
   };
   const handleSelect = (chair) => {
     const data = [...chairList];
