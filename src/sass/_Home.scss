@@ -1,300 +1,503 @@
 //Home PAGE CONTENT
 
 .carousel {
-    object-fit: cover;
-    border-radius: 15px;
-    width: 100%;
-    height: 50vh;
-   
+  object-fit: cover;
+  border-radius: 15px;
+  width: 100%;
+  height: 50vh;
 }
 .bg-cover {
-    background: url(../images/coming-bg.jpg);
-    padding-bottom: 50px;
+  background: url(../images/coming-bg.jpg);
+  padding-bottom: 50px;
 }
 
-.logo{
-    width: 80px;
-    height: 80px;
-    padding: 10px;
-} 
+.logo {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+}
 
- .card .movie-image:hover .entry-hover {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+.card .movie-image:hover .entry-hover {
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .entry-hover {
-    position: absolute;
-    top: 1px;
-    left: 0;
-    bottom: 145px;
-    right: 0;
-    z-index: 1;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    border: 2px solid #fb802d;
-    background-color: rgba(0, 0, 0, 0.75);
-    -webkit-transition: all 0.7s ease;
-    transition: all 0.7s ease;
+  position: absolute;
+  top: 1px;
+  left: 0;
+  bottom: 145px;
+  right: 0;
+  z-index: 1;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  border: 2px solid #fb802d;
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
 }
 .entry-actions {
-    display: block;
-    margin-bottom: 22px;
-    position: relative;
-    top: 50%;
+  display: block;
+  margin-bottom: 22px;
+  position: relative;
+  top: 50%;
 }
 
- .entry-actions a {
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    font-size: 14px;
-    font-family: Roboto;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    color: #fff;
-    border-radius: 20px;
-    border: 1px solid #fb802d;
-    -webkit-transition: all 0.25s ease;
-    -moz-transition: all 0.25s ease;
-    transition: all 0.25s ease;
+.entry-actions a {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  font-family: Roboto;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+  border-radius: 20px;
+  border: 1px solid #fb802d;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
- .entry-hover .entry-actions a:hover {
-    background-color: #fb8f46;
-    border-color: #fb8f46;
-    color: white;
-    text-decoration: none;
+.entry-hover .entry-actions a:hover {
+  background-color: #fb8f46;
+  border-color: #fb8f46;
+  color: white;
+  text-decoration: none;
 }
- .logo-cart {
-    color: #fff;
-    margin: 2px;
- }
-
+.logo-cart {
+  color: #fff;
+  margin: 2px;
+}
 
 .rating {
-    margin: 10px;
-    margin-left: 25px;
-    font-size: 22px;
-    overflow: hidden;
-    color: #ea4034;
+  margin: 10px;
+  margin-left: 25px;
+  font-size: 22px;
+  overflow: hidden;
+  color: #ea4034;
 }
 .rating input {
-    float: right;
-    opacity: 0;
-    position: absolute;
+  float: right;
+  opacity: 0;
+  position: absolute;
 }
 
 .rating label {
-    float: left;
-    color: #ffffff;
-    text-decoration: none;
-    -webkit-transition: color .4s;
-    -moz-transition: color .4s;
-    -o-transition: color .4s;
-    transition: color .4s;
+  float: left;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
 }
 .rating label:hover {
-    color: #fb802d;
-    cursor: pointer;
+  color: #fb802d;
+  cursor: pointer;
 }
 
-.iframe-link{
-    flex: 0 0 1;
-    margin: 0 10px;
-    color:#fff;
-  }
+.iframe-link {
+  flex: 0 0 1;
+  margin: 0 10px;
+  color: #fff;
+}
 .link-logo {
-color: #000000;
+  color: #000000;
 }
 
 .btn-trailer {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 .btn-trailer:hover {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .nameCinema {
-    color: black;
+  color: black;
 }
 .nameCinema:hover {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 .dateMovie {
-    display: grid;
-    column-gap: 40px;
-    grid-template-columns: auto auto auto;
-    row-gap: 14px;
-    margin: 10px;
-
+  display: grid;
+  column-gap: 40px;
+  grid-template-columns: auto auto auto;
+  row-gap: 14px;
+  margin: 10px;
 }
 
-
 .card-body {
-background-color: antiquewhite;
-
+  background-color: antiquewhite;
 }
 
 h3.content::after {
-    
-        display: block;
-        width: 50px;
-        height: 2px;
-        margin-top: 8px;
-        content: "";
-        background-color: #f26b38;
-   
+  display: block;
+  width: 50px;
+  height: 2px;
+  margin-top: 8px;
+  content: "";
+  background-color: #f26b38;
 }
 
-.detail{
-    background-color: #f18720;
-    box-shadow: 10px 10px 10px 0 rgba(0,0,0,0.3), 0 0 50px 0 rgba(0,0,0,0.4) inset;
-    width: 90%;
-    margin: 0 auto !important;
-    display: block;
-    color: white;
-    padding-top: 100px;
+.detail {
+  background-color: #f18720;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3),
+    0 0 50px 0 rgba(0, 0, 0, 0.4) inset;
+  width: 90%;
+  margin: 0 auto !important;
+  display: block;
+  color: white;
+  padding-top: 100px;
 }
 
- .film-item-but {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    width: 100%;
+.film-item-but {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 
- .trailler-btn {
-    font-family: 'Futurab';
-    font-weight: normal;
-    font-size: 24px;
-    color: #fff;
-    text-transform: uppercase;
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
-    line-height: 52px;
-    height: 52px;
-    display: inline-block;
-    vertical-align: middle;
-    width: 180px;
-    background: rgba(0,0,0,0.5) url(../images/icon-play.png) no-repeat -14px center;
-    text-align: left;
-    padding-left: 52px;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    margin: 5px 2px;
+.trailler-btn {
+  font-family: "Futurab";
+  font-weight: normal;
+  font-size: 24px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  line-height: 52px;
+  height: 52px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 180px;
+  background: rgba(0, 0, 0, 0.5) url(../images/icon-play.png) no-repeat -14px center;
+  text-align: left;
+  padding-left: 52px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 5px 2px;
 }
 
 .trailler-btn:hover {
-    background-color: rgba(0,0,0,0.8);
-    text-decoration: none;
-    color: #fb802d;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  color: #fb802d;
 }
 
 .cart-btn {
-    background-color: #e00d7a;
-    font-family: 'Futurab';
-    font-weight: normal;
-    font-size: 24px;
-    text-transform: uppercase;
-    line-height: 30px;
-    color: #fff;
-    border-radius: 30px 0 30px 30px;
-    -webkit-border-radius: 30px 0 30px 30px;
-    line-height: 52px;
-    padding: 0 20px;
-    height: 52px;
-    display: inline-block;
-    vertical-align: middle;
-    width: 146px;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    margin: 5px 2px;
-    box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+  background-color: #e00d7a;
+  font-family: "Futurab";
+  font-weight: normal;
+  font-size: 24px;
+  text-transform: uppercase;
+  line-height: 30px;
+  color: #fff;
+  border-radius: 30px 0 30px 30px;
+  -webkit-border-radius: 30px 0 30px 30px;
+  line-height: 52px;
+  padding: 0 20px;
+  height: 52px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 146px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 5px 2px;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
 }
- .cart-btn:hover {
-    background-color: #fecf06;
-    color: #000;
-    text-decoration: none;
+.cart-btn:hover {
+  background-color: #fecf06;
+  color: #000;
+  text-decoration: none;
 }
 
 .l-social {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: auto;
-    display: inline-block;
-    vertical-align: bottom;
-    margin: 5px 2px;
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 5px 2px;
 }
- .l-social li {
-    display: inline-block;
+.l-social li {
+  display: inline-block;
 }
- .l-social li:first-child {
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 7px;
+.l-social li:first-child {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 7px;
 }
 
 .l-facebook {
-    width: 44px;
-    height: 44px;
-    background: url(../images/scl_facebook.png) no-repeat center center;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    background-size: cover;
-    -webkit-background-size: cover;
-    text-indent: 9999px;
-    margin-bottom: 10px;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
-    overflow: hidden;
+  width: 44px;
+  height: 44px;
+  background: url(../images/scl_facebook.png) no-repeat center center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  text-indent: 9999px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.l-social .l-facebook, .l-social .l-google {
-    width: 54px;
-    height: 54px;
-    margin-bottom: 0;
+.l-social .l-facebook,
+.l-social .l-google {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 0;
 }
 .l-social li {
-    display: block;
-    font-family: 'MyriadLight';
-    font-weight: normal;
-    font-size: 14px;
-    color: #fff;
-    margin-bottom: 3px;
+  display: block;
+  font-family: "MyriadLight";
+  font-weight: normal;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 3px;
 }
 .l-google {
-    width: 44px;
-    height: 44px;
-    background: url(../images/scl_google.png) no-repeat center center;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    background-size: cover;
-    -webkit-background-size: cover;
-    text-indent: 9999px;
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
-    overflow: hidden;
+  width: 44px;
+  height: 44px;
+  background: url(../images/scl_google.png) no-repeat center center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  text-indent: 9999px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.l-facebook:hover, .l-google:hover {
-    opacity: 0.5;
-    cursor: pointer;
+.l-facebook:hover,
+.l-google:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .timeDate {
-    font-size: 20px;
+  font-size: 20px;
+}
+
+//button-17
+.button-17 {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+}
+
+.button-17:hover {
+  background: #f6f9fe;
+  color: #174ea6;
+}
+
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
+    0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.button-17:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.button-17:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 2px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 6px 10px 4px;
+}
+
+.button-17:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 4px 4px 0,
+    rgba(60, 64, 67, 0.15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.button-18 {
+  display: inline-block;
+  outline: 0px;
+  border: 0px;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background: radial-gradient(
+    100% 100% at 100% 0%,
+    rgb(137, 229, 255) 0%,
+    rgb(84, 104, 255) 100%
+  );
+  box-shadow: rgba(45, 35, 66, 0.4) 0px 2px 4px,
+    rgba(45, 35, 66, 0.3) 0px 7px 13px -3px,
+    rgba(58, 65, 111, 0.5) 0px -3px 0px inset;
+  padding: 0px 32px;
+  border-radius: 6px;
+  color: rgb(255, 255, 255);
+  height: 48px;
+  font-size: 18px;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
+  transition: box-shadow 0.15s ease 0s, transform 0.15s ease 0s;
+}
+
+.cinema-title {
+  font-family: "Futurab";
+  font-weight: normal;
+  font-size: 24px;
+  color: #fff;
+  display: block;
+  background-color: #969696;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  line-height: 42px;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cinema-note {
+  position: relative;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+.cinema-note li.single {
+  // background: url(../images/single-chair.png) no-repeat left top;
+  padding-left: 50px;
+}
+
+.cinema-note li.couple {
+  // background: url(../images/couple-chair.png) no-repeat left top;
+  padding-left: 90px;
+}
+
+.cinema-note li.choosing {
+  // background: url(../images/single-chair.png) no-repeat left -46px;
+  padding-left: 50px;
+}
+.cinema-note li.busy {
+  // background: url(../images/single-chair.png) no-repeat left -92px;
+  padding-left: 50px;
+}
+.cinema-note li.road {
+  position: relative;
+  padding-left: 40px;
+}
+
+.cinema-wrap {
+  position: relative;
+  width: 93%;
+  height: 600px;
+  margin: 0 auto;
+  overflow: scroll;
+}
+.seat {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  padding: 0;
+}
+.delete-seat {
+  line-height: 45px;
+}
+.description{
+  padding: 40px;
+  padding-top: 68px;
+}
+.description-child{
+  width: 132px;
+  height: 61px;
+}
+
+.info-film {
+    padding: 10px;
+    box-shadow: #EEEEEE 0px 22px 70px 4px;
+    background: url("https://vidyasheela.com/web-contents/website-components/Login-Pages/transparent-login-page-template-in-html-and-css/background-img.jpg")
+    rgba(0, 0, 0, 0.61);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  color: wheat;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+ 
+}
+table .invocie {
+    color: wheat;
+}
+.table-hover tbody tr:hover {
+    color: #fe975b !important;
+    background-color: rgb(255 255 255 / 15%) !important;
+}
+@media screen and (max-width: 1100px) {
+  .cinema-wrap {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 0 5% 0;
+  }
+  // .seat-scroll {
+  //   overflow-x: scroll;
+  //   overflow-y: scroll;
+  // }
+  
 }

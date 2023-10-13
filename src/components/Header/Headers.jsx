@@ -67,9 +67,7 @@ export default function Headers() {
 
           <div className="navbar">
             <div className="search">
-              <form action="#" method="GET" className="search-right">
-                <input type="search" placeholder="Search" />
-              </form>
+             
             </div>
             {renderUser()}
             <div className="dropdown">

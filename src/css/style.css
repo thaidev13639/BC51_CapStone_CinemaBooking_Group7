@@ -556,7 +556,8 @@ h3.content::after {
   overflow: hidden;
 }
 
-.l-social .l-facebook, .l-social .l-google {
+.l-social .l-facebook,
+.l-social .l-google {
   width: 54px;
   height: 54px;
   margin-bottom: 0;
@@ -586,7 +587,8 @@ h3.content::after {
   overflow: hidden;
 }
 
-.l-facebook:hover, .l-google:hover {
+.l-facebook:hover,
+.l-google:hover {
   opacity: 0.5;
   cursor: pointer;
 }
@@ -595,6 +597,196 @@ h3.content::after {
   font-size: 20px;
 }
 
+.button-17 {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px, rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+}
+
+.button-17:hover {
+  background: #f6f9fe;
+  color: #174ea6;
+}
+
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgba(60, 64, 67, 0.3), 0 8px 12px 6px rgba(60, 64, 67, 0.15);
+  outline: none;
+}
+
+.button-17:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.button-17:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0, rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 2px 3px 0, rgba(60, 64, 67, 0.15) 0 6px 10px 4px;
+}
+
+.button-17:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0, rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 4px 4px 0, rgba(60, 64, 67, 0.15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0, rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.button-18 {
+  display: inline-block;
+  outline: 0px;
+  border: 0px;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background: radial-gradient(100% 100% at 100% 0%, rgb(137, 229, 255) 0%, rgb(84, 104, 255) 100%);
+  box-shadow: rgba(45, 35, 66, 0.4) 0px 2px 4px, rgba(45, 35, 66, 0.3) 0px 7px 13px -3px, rgba(58, 65, 111, 0.5) 0px -3px 0px inset;
+  padding: 0px 32px;
+  border-radius: 6px;
+  color: rgb(255, 255, 255);
+  height: 48px;
+  font-size: 18px;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
+  transition: box-shadow 0.15s ease 0s, transform 0.15s ease 0s;
+}
+
+.cinema-title {
+  font-family: "Futurab";
+  font-weight: normal;
+  font-size: 24px;
+  color: #fff;
+  display: block;
+  background-color: #969696;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  line-height: 42px;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cinema-note {
+  position: relative;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.cinema-note li.single {
+  padding-left: 50px;
+}
+
+.cinema-note li.couple {
+  padding-left: 90px;
+}
+
+.cinema-note li.choosing {
+  padding-left: 50px;
+}
+
+.cinema-note li.busy {
+  padding-left: 50px;
+}
+
+.cinema-note li.road {
+  position: relative;
+  padding-left: 40px;
+}
+
+.cinema-wrap {
+  position: relative;
+  width: 93%;
+  height: 600px;
+  margin: 0 auto;
+  overflow: scroll;
+}
+
+.seat {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  padding: 0;
+}
+
+.delete-seat {
+  line-height: 45px;
+}
+
+.description {
+  padding: 40px;
+  padding-top: 68px;
+}
+
+.description-child {
+  width: 132px;
+  height: 61px;
+}
+
+.info-film {
+  padding: 10px;
+  box-shadow: #EEEEEE 0px 22px 70px 4px;
+  background: url("https://vidyasheela.com/web-contents/website-components/Login-Pages/transparent-login-page-template-in-html-and-css/background-img.jpg") rgba(0, 0, 0, 0.61);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  color: wheat;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+table .invocie {
+  color: wheat;
+}
+
+.table-hover tbody tr:hover {
+  color: #fe975b !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+@media screen and (max-width: 1100px) {
+  .cinema-wrap {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 0 5% 0;
+  }
+}
 .form-login {
   display: flex;
   flex-direction: column;

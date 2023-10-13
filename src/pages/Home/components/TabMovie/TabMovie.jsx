@@ -62,8 +62,6 @@ export default function TabMovie() {
                                 {phim.lstLichChieuTheoPhim.slice(0, 15).map((lichChieu,idx)=>{
                                 return <NavLink className="text-datetab" to="/" key={idx}>
                                     {formatDate(lichChieu.ngayChieuGioChieu)}
-                                    
-                                        
                                 </NavLink>
                               })}
                                    

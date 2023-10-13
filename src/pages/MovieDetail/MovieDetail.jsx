@@ -1,8 +1,7 @@
 import React from "react";
-import TabMovie from "../Home/components/TabMovie/TabMovie";
 import Detail from "./components/Detail/Detail";
 import ShowTimes from "./components/ShowTimes/ShowTimes";
-// import 'animate.css'
+ import 'animate.css'
 
 export default function MovieDetail() {
   return (
@@ -12,11 +11,11 @@ export default function MovieDetail() {
       <div className="col-12">
        <Detail/>
       </div>
-      <div id="tabList" className="col-12 mt-5">
+      <div id="tabList" className="col-12 mt-5" style={{display:"none"}}>
         <ShowTimes/>
       </div>
     </div>
-    {/* <TabMovie/> */}
+   
   </div>
 </div>
 

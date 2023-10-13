@@ -21,6 +21,12 @@ class UserService {
       data,
     });
   };
+  fetchUserInf = (data) =>{
+    return requestApi({
+      url: "/QuanLyNguoiDung/ThongTinTaiKhoan",
+      method: "POST",
+    });
+  }
 }
 
 export const userSvervice = new UserService();
