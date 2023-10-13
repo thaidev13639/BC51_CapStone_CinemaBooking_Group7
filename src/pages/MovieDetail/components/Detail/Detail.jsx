@@ -1,23 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { movieService } from "../../../../services/movie";
 import { formatDate } from "../../../../utils/date";
 import { showHide } from "../../../../showHide";
+import { LoadingContext } from "../../../../contexts/LoadingContext/LoadingContext";
 
 
 export default function Detail() {
   const params = useParams();
   const [detail, setDetail] = useState({});
+  //const [loadingState,setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchMovieDetail();
   }, []);
 
   const fetchMovieDetail = async () => {
+   // setLoadingState({ isLoading : true});
+
     const result = await movieService.fetchMovieDetailApi(params.movieId);
     console.log(result);
     setDetail(result.data.content);
+
+    //setLoadingState({ isLoading : false});
+      
   };
 
   return (

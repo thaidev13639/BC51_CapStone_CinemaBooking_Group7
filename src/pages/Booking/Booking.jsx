@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ticketService } from "../../services/ticket";
 import { filter, sumBy } from "lodash";
 import { Alert, Button, Popconfirm, notification } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCouch } from "@fortawesome/free-solid-svg-icons";
+import { LoadingContext } from "../../contexts/LoadingContext/LoadingContext";
 
 export default function Booking() {
   const params = useParams();
   const [movieDetail, setMovieDetail] = useState({});
   const [chairList, setChairList] = useState([]);
-
+  const [loadingState,setLoadingState] = useContext(LoadingContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function Booking() {
   }, []);
 
   const fetchTicketDetail = async () => {
+    setLoadingState({ isLoading : true});
     const result = await ticketService.fetchTicketDetailApi(params.id);
     setMovieDetail(result.data.content.thongTinPhim);
     setChairList(
@@ -34,6 +36,7 @@ export default function Booking() {
       })
     );
     console.log(result);
+    setLoadingState({ isLoading : false});
   };
   const handleSelect = (chair) => {
     const data = [...chairList];
@@ -58,6 +61,10 @@ export default function Booking() {
 
       return (
         <React.Fragment key={element.maGhe}>
+         
+          
+         
+          <td>
           <button
             disabled={element.daDat}
             onClick={() => handleSelect(element)}
@@ -66,7 +73,9 @@ export default function Booking() {
             <FontAwesomeIcon icon={faCouch} style={{ color: "#72767e" }} />
             {element.tenGhe}
           </button>
-          {(idx + 1) % 16 === 0 && <br />}
+          </td>
+          {(idx + 1) % 16 === 0 && <br /> }
+          
         </React.Fragment>
       );
     });
@@ -162,37 +171,40 @@ export default function Booking() {
   };
 
   return (
-    <div className="py-5">
-       <div className="bg-cover">
-      <div className="row">
+    <div className="bg-cover">
+    <div className="py-5 ">
+      
+      <div className="row ">
        
-        <div className="col-8 mb-4">
-          <div style={{ width: "95%" }} className="mx-auto">
-            <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-secondary">
-              Seats are booked
+        <div className="col-8 mt-4 mb-4">
+          <div style={{ width: "95%" }} className="mx-auto description ">
+            <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-secondary description-child">
+             
+             <FontAwesomeIcon icon={faCouch} style={{ color: "#454952" }} />  <br />
+             Ghế đã đặt 
             </div>
-            <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-dark">
-              Seats not booked
+            <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-dark description-child">
+          
+             <FontAwesomeIcon icon={faCouch} style={{ color: "#72767e" }} /> <br />
+             Ghế chưa đặt
             </div>
-            <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-primary">
-              Seats are being booked
+            <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-primary description-child">
+            <FontAwesomeIcon icon={faCouch} style={{ color: "#72767e" }} /> <br />
+             Ghế đang chọn
+            
             </div>
-            <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-warning">
-              VIP seats
+            <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-warning description-child">
+                <FontAwesomeIcon icon={faCouch} style={{ color: "#72767e" }} /> <br />
+                Ghế VIP 
             </div>
 
-            <ul className="cinema-note">
-              <li className="single">Ghế thường</li>
-              <li className="vip">Ghế vip</li>
-              <li className="choosing">Ghế đang chọn</li>
-              <li className="busy">Ghế đã đặt</li>
-            </ul>
+    
           </div>
         </div>
         <div className="col-8">
           <h3 class="cinema-title">Màn hình</h3>
           <div className="cinema-wrap">
-            <div style={{ width: "95%" }} className="cinema-wrap seat-scroll">
+            <div style={{ width: "95%" }} className="">
               {renderChairList()}
             </div>
           </div>

@@ -3,21 +3,27 @@ import { cinemaService } from "../../../../services/cinema";
 import { Link, useParams } from "react-router-dom";
 import { Tabs } from "antd";
 import { formatDate } from "../../../../utils/date";
+import { useContext } from "react";
+import { LoadingContext } from "../../../../contexts/LoadingContext/LoadingContext";
 
 export default function ShowTimes() {
   const params = useParams();
   const [data, setData] = useState([]);
   const TabPane = Tabs.TabPane;
-  // const [tabList, setTabList] = useState([]);
+ // const [loadingState,setLoadingState] = useContext(LoadingContext);
+  
 
   useEffect(() => {
     fetchShowtimes();
   }, []);
 
   const fetchShowtimes = async () => {
+   // setLoadingState({ isLoading : true});
+
     const result = await cinemaService.fetchShowtimesApi(params.movieId);
     console.log(result);
     setData(result.data.content.heThongRapChieu);
+   // setLoadingState({ isLoading : false});
   };
 
   const renderTabList = () => {

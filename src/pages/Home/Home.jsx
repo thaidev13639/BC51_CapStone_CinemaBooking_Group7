@@ -1,37 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import "../../css/style.css";
 import { useEffect } from "react";
 import { movieService } from "../../services/movie";
 import Banner from "./components/Banner/Banner";
-import { Button } from "antd/es/radio";
 import TabMovie from "./components/TabMovie/TabMovie";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { Input } from "antd";
+
 import { removeVietnameseTones } from "../../utils/removeVietnames";
-import { data } from "jquery";
-import { async } from "q";
+import { LoadingContext } from "../../contexts/LoadingContext/LoadingContext";
+
 
 export default function Home() {
   const navigate = useNavigate();
   const [search, setSearch] = useState({});
   const [movieList, setMovieList] = useState([]);
-  const { Search } = Input;
+ // const [loadingState,setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchMovieList();
-    // handleChange();
+   
   }, []);
-
   const fetchMovieList = async () => {
+    // setLoadingState({ isLoading : true});
+
     const result = await movieService.fetchMovieListApi();
     console.log(result);
     setMovieList(result.data.content);
     setSearch({
       keyword: "",
     });
+
+    // setLoadingState({ isLoading : false});
   };
 
   const handleChange = async (event) => {

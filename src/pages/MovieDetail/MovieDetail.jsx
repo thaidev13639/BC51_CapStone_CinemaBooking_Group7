@@ -1,5 +1,4 @@
 import React from "react";
-import TabMovie from "../Home/components/TabMovie/TabMovie";
 import Detail from "./components/Detail/Detail";
 import ShowTimes from "./components/ShowTimes/ShowTimes";
  import 'animate.css'
@@ -16,7 +15,7 @@ export default function MovieDetail() {
         <ShowTimes/>
       </div>
     </div>
-    {/* <TabMovie/> */}
+   
   </div>
 </div>
 

@@ -2,12 +2,18 @@ import "./App.css";
 
 import { BrowserRouter } from "react-router-dom";
 import Router from "./routes/Router";
+import { LoadingProvider } from "./contexts/LoadingContext/LoadingContext";
 
 function App() {
   return (
-    <BrowserRouter>
+    //  <LoadingProvider>
+
+  <BrowserRouter>
       <Router />
     </BrowserRouter>
+    
+      //   </LoadingProvider>
+    
   );
 }
 

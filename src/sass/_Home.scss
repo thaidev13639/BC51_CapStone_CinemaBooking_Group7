@@ -446,6 +446,7 @@ h3.content::after {
   width: 93%;
   height: 600px;
   margin: 0 auto;
+  overflow: scroll;
 }
 .seat {
   width: 50px;
@@ -455,6 +456,14 @@ h3.content::after {
 }
 .delete-seat {
   line-height: 45px;
+}
+.description{
+  padding: 40px;
+  padding-top: 68px;
+}
+.description-child{
+  width: 132px;
+  height: 61px;
 }
 
 .info-film {
@@ -486,12 +495,9 @@ table .invocie {
     margin: 0 auto;
     padding: 0 0 5% 0;
   }
-  .seat-scroll {
-    overflow-x: scroll;
-    overflow-y: scroll;
-  }
-  .seat {
-    width: 10px;
-    height: 10px;
-  }
+  // .seat-scroll {
+  //   overflow-x: scroll;
+  //   overflow-y: scroll;
+  // }
+  
 }

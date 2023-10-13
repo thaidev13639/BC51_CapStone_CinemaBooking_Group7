@@ -16,6 +16,7 @@ import AdminCreateFilm from "../pages/Admin/ComponentAdmin/AdminShowTime/AdminCr
 import AuthGuard from "../guards/AuthGuard";
 import Booking from "../pages/Booking/Booking";
 import AdminEditFilm from "../pages/Admin/ComponentAdmin/AdminShowTime/AdminEditFlim";
+import Userinfo from "../pages/Userinfo/Userinfo";
 
 export default function Router() {
   const rooting = useRoutes([
@@ -38,6 +39,10 @@ export default function Router() {
               <Booking />
             </AuthGuard>
           ),
+        },
+        {
+          path: "/thongtincanhan",
+          element: <Userinfo />,
         },
       ],
     },
