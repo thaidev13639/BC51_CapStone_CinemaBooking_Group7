@@ -308,6 +308,12 @@ hr {
   padding: 10px;
 }
 
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .card .movie-image:hover .entry-hover {
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -787,6 +793,30 @@ table .invocie {
     padding: 0 0 5% 0;
   }
 }
+.img-ticket {
+  width: 200px;
+  height: 188px;
+  padding: 10px;
+}
+
+.img-cinema {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+}
+
+.tab-cinema {
+  overflow: scroll;
+}
+
+.showpass {
+  position: absolute;
+  /* width: 40px; */
+  /* height: 40px; */
+  left: 218px;
+  bottom: 20px;
+}
+
 .form-login {
   display: flex;
   flex-direction: column;

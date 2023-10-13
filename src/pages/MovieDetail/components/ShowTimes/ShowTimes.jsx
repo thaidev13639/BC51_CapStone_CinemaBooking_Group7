@@ -33,12 +33,12 @@ export default function ShowTimes() {
 
           tab={
             <a
-              key={element.maHeThongRap}
+             
               // className={`nav-link  text-capitalize ${idx === 0 && "active"}`}
               className="nameCinema"
               data-toggle="pill"
               href={`#${element.maHeThongRap}`}
-              role="tab"
+              
               aria-selected="true"
             >
               <img className="logo" src={element.logo} />
@@ -67,7 +67,7 @@ export default function ShowTimes() {
                   <div className="row">
                     {element.lichChieuPhim.map((element) => {
                       return (
-                        <div key={element.maRap} className="col-3">
+                        <div key={element.maLichChieu} className="col-3">
                           <Link  className="timeDate text-primary" to={`/booking/${element.maLichChieu}`}>
                             {formatDate(element.ngayChieuGioChieu)}
                           </Link>
@@ -86,10 +86,8 @@ export default function ShowTimes() {
     });
   };
 
- 
-
   return (
-    <div className="animate__animated animate__bounce animate__repeat-2 mb-5">
+    <div className="animate__animated animate__bounce animate__repeat-2 mb-5 tab-cinema">
       <Tabs tabPosition="left" style={{ height: 220 }}>
         {renderTabList()}
       </Tabs>

@@ -5,10 +5,10 @@ import ShowTimes from "./components/ShowTimes/ShowTimes";
 
 export default function MovieDetail() {
   return (
-   <div className="detail ">
+   <div className="detail mb-3 ">
   <div className="container">
     <div className="row">
-      <div className="col-12">
+      <div className="col-12 ">
        <Detail/>
       </div>
       <div id="tabList" className="col-12 mt-5" style={{display:"none"}}>
