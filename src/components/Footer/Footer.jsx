@@ -45,7 +45,7 @@ export default function Footer() {
               Subscribe to our mailing list and get updates to your email
               inbox.
             </p>
-            <form action className="subscribe d-flex mt-3" method="post">
+            <form className="subscribe d-flex mt-3"  >
               <input type="email" name="Email" placeholder="Email Address" required />
               <button>
               <FontAwesomeIcon icon={faPaperPlane} />

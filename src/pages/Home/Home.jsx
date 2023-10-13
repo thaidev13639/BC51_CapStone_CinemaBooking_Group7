@@ -68,6 +68,7 @@ export default function Home() {
                   className="card-img-top"
                   src={element.hinhAnh}
                   alt="movie"
+                  
                 />
                 <div className="entry-hover">
                   <div className="entry-actions">
