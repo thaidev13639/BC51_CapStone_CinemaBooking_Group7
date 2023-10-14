@@ -55,10 +55,10 @@ export default function Home() {
       console.log(data);
       return data.map((element) => {
         return (
-          <div key={element.maPhim} className="col-3">
+          <div key={element.maPhim} className="rsponsive col-3 ">
             <div
               className="card movie-card"
-              style={{ marginBottom: 20, height: 500 }}
+              
             >
               <div className="movie-image">
                 <img
@@ -99,7 +99,7 @@ export default function Home() {
               </div>
 
               <div className="card-body">
-                <h4 className="card-title title">{element.tenPhim}</h4>
+                <h5 className="card-title title">{element.tenPhim}</h5>
                 <button
                   className="button-17"
                   role="button"
@@ -121,7 +121,8 @@ export default function Home() {
       <Banner />
 
       <div className="py-5">
-        <div className="search" style={{ position: "relative", left: "200px" }}>
+        <div className="container"> 
+        <div className="search" >
           <form className="search-right">
             <input
               type="search"
@@ -131,7 +132,11 @@ export default function Home() {
             />
           </form>
         </div>
-        <div className="row mt-3 mx-auto w-75">{renderMovieList()}</div>
+
+        <div className="row mt-3 mx-auto ">{renderMovieList()}</div>
+        </div>
+       
+        
       </div>
 
     
