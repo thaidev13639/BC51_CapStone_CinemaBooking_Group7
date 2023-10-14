@@ -85,9 +85,9 @@ export default function Booking() {
 
     return data.map((element, idx) => {
       return (
-       
-        <tr>
-          <th key={element.maGhe} scope="row">
+        <React.Fragment key={element.maGhe}>
+        <tr >
+          <th  scope="row">
             {idx + 1}
           </th>
           <td>
@@ -104,6 +104,7 @@ export default function Booking() {
             &#x274C;
           </i>
         </tr>
+        </React.Fragment>
       );
     });
   };
@@ -163,7 +164,7 @@ export default function Booking() {
     <div className="bg-cover">
     <div className="py-5 ">
       
-      <div className="row ">
+      <div className="row  invoice-content">
        
         <div className="col-8 mt-4 mb-4">
           <div style={{ width: "95%" }} className="mx-auto description ">
@@ -200,22 +201,29 @@ export default function Booking() {
               
           </div>
         </div>
-        <div className="col-4 info-film">
+        <div className="col-4 ">
+          <div className="info-film">
+
           <img
-            style={{ width: 300, height: 400, objectFit: "cover" }}
+          className="img-booking"
+            
             src={movieDetail.hinhAnh}
             alt="#"
           />
-          <h4 className="mb-0">{movieDetail.tenPhim}</h4>
-          <h5 className="mb-0">
+          <div className="title-invoice">
+          <h3 className="title-movi mb-0">{movieDetail.tenPhim}</h3>
+          <p className="mb-0">
             Giờ chiếu :{movieDetail.gioChieu}
            
-          </h5>
-          <h5 className="mb-0">
+          </p>
+          <p className="mb-0">
             Ngày Chiếu :{movieDetail.ngayChieu}
            
-          </h5>
-          <h5>Tên cụm rạp:{movieDetail.tenCumRap}</h5>
+          </p>
+          <p>Tên cụm rạp:{movieDetail.tenCumRap}</p>
+
+          </div>
+          
 
           <table className=" table-hover invocie">
             <thead>
@@ -255,6 +263,8 @@ export default function Booking() {
               BOOK
             </Button>
           </Popconfirm>
+          </div>
+         
         </div>
       </div>
       </div>

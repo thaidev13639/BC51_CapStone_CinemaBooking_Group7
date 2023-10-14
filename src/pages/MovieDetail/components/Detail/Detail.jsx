@@ -30,7 +30,7 @@ export default function Detail() {
   return (
     <div className="row">
       <div className="col-3">
-        <img className="animate__animated animate__bounceInLeft  w-100" src={detail.hinhAnh} />
+        <img className="animate__animated animate__bounceInLeft img-detail " src={detail.hinhAnh} />
       </div>
       <div className=" animate__animated animate__bounceInLeft col-9">
         <h4>{detail.tenPhim}</h4>
