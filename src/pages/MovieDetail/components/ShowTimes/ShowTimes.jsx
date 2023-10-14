@@ -10,7 +10,7 @@ export default function ShowTimes() {
   const params = useParams();
   const [data, setData] = useState([]);
   const TabPane = Tabs.TabPane;
- // const [loadingState,setLoadingState] = useContext(LoadingContext);
+  const [loadingState,setLoadingState] = useContext(LoadingContext);
   
 
   useEffect(() => {
@@ -18,12 +18,12 @@ export default function ShowTimes() {
   }, []);
 
   const fetchShowtimes = async () => {
-   // setLoadingState({ isLoading : true});
+    setLoadingState({ isLoading : true});
 
     const result = await cinemaService.fetchShowtimesApi(params.movieId);
     console.log(result);
     setData(result.data.content.heThongRapChieu);
-   // setLoadingState({ isLoading : false});
+    setLoadingState({ isLoading : false});
   };
 
   const renderTabList = () => {

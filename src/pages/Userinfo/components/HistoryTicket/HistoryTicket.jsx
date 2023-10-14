@@ -1,21 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { userSvervice } from "../../../../services/user";
 import { Tabs } from "antd";
-import { Link } from "react-router-dom";
 import { formatDate } from "../../../../utils/date";
+import { LoadingContext } from "../../../../contexts/LoadingContext/LoadingContext";
 
 export default function HistoryTicket() {
   const [data, setData] = useState([]);
   const TabPane = Tabs.TabPane;
+  const [loadingState,setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchUserInfo();
   }, []);
 
   const fetchUserInfo = async () => {
+    setLoadingState({ isLoading : true});
+
     const result = await userSvervice.fetchUserTicket();
     console.log(result.data.content);
     setData(result.data.content.thongTinDatVe);
+
+    setLoadingState({ isLoading : false});
   };
 
   const renderTabList = () => {

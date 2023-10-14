@@ -6,13 +6,11 @@ import { LoadingProvider } from "./contexts/LoadingContext/LoadingContext";
 
 function App() {
   return (
-    //  <LoadingProvider>
-
+     <LoadingProvider>
   <BrowserRouter>
       <Router />
     </BrowserRouter>
-    
-      //   </LoadingProvider>
+       </LoadingProvider>
     
   );
 }
