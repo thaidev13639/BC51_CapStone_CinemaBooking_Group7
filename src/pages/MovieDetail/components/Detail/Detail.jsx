@@ -10,20 +10,20 @@ import { LoadingContext } from "../../../../contexts/LoadingContext/LoadingConte
 export default function Detail() {
   const params = useParams();
   const [detail, setDetail] = useState({});
-  //const [loadingState,setLoadingState] = useContext(LoadingContext);
+  const [loadingState,setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchMovieDetail();
   }, []);
 
   const fetchMovieDetail = async () => {
-   // setLoadingState({ isLoading : true});
+    setLoadingState({ isLoading : true});
 
     const result = await movieService.fetchMovieDetailApi(params.movieId);
     console.log(result);
     setDetail(result.data.content);
 
-    //setLoadingState({ isLoading : false});
+    setLoadingState({ isLoading : false});
       
   };
 

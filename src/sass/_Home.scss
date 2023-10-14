@@ -156,22 +156,14 @@ h3.content::after {
   background-color: #f26b38;
 }
 
-.detail {
-  background-color: #f18720;
-  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3),
-    0 0 50px 0 rgba(0, 0, 0, 0.4) inset;
-  width: 90%;
-  margin: 0 auto !important;
-  display: block;
-  color: white;
-  padding-top: 100px;
-}
+
 
 .film-item-but {
   position: relative;
   display: inline-block;
   width: 100%;
 }
+//home
 
 .trailler-btn {
   font-family: "Futurab";
@@ -229,80 +221,6 @@ h3.content::after {
   text-decoration: none;
 }
 
-.l-social {
-  position: relative;
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-  display: inline-block;
-  vertical-align: bottom;
-  margin: 5px 2px;
-}
-.l-social li {
-  display: inline-block;
-}
-.l-social li:first-child {
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 7px;
-}
-
-.l-facebook {
-  width: 44px;
-  height: 44px;
-  background: url(../images/scl_facebook.png) no-repeat center center;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  background-size: cover;
-  -webkit-background-size: cover;
-  text-indent: 9999px;
-  margin-bottom: 10px;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.l-social .l-facebook,
-.l-social .l-google {
-  width: 54px;
-  height: 54px;
-  margin-bottom: 0;
-}
-.l-social li {
-  display: block;
-  font-family: "MyriadLight";
-  font-weight: normal;
-  font-size: 14px;
-  color: #fff;
-  margin-bottom: 3px;
-}
-.l-google {
-  width: 44px;
-  height: 44px;
-  background: url(../images/scl_google.png) no-repeat center center;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  background-size: cover;
-  -webkit-background-size: cover;
-  text-indent: 9999px;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.l-facebook:hover,
-.l-google:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-.timeDate {
-  font-size: 20px;
-}
 
 //button-17
 .button-17 {
@@ -405,6 +323,111 @@ h3.content::after {
   transition: box-shadow 0.15s ease 0s, transform 0.15s ease 0s;
 }
 
+//booking - invoice
+
+.img-booking {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+.title-invoice {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.table-hover tbody tr:hover {
+  color: #fe975b !important;
+  background-color: rgb(255 255 255 / 15%) !important;
+}
+
+
+.info-film {
+  padding: 10px;
+  box-shadow: #eeeeee 0px 22px 70px 4px;
+  background: url("https://vidyasheela.com/web-contents/website-components/Login-Pages/transparent-login-page-template-in-html-and-css/background-img.jpg")
+    rgba(0, 0, 0, 0.61);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  color: wheat;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.cinema-wrap {
+  position: relative;
+  width: 93%;
+  height: 600px;
+  margin: 0 auto;
+  overflow: scroll;
+}
+.seat {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  padding: 0;
+}
+.delete-seat {
+  line-height: 45px;
+}
+.description {
+  padding: 40px;
+  padding-top: 68px;
+}
+.description-child {
+  width: 132px;
+  height: 61px;
+}
+
+//userinfo
+.img-ticket {
+  width: 200px;
+  height: 188px;
+  padding: 10px;
+}
+
+.img-cinema {
+  width: 95px;
+  height: 83px;
+  padding: 10px;
+}
+
+.tab-cinema {
+  overflow: scroll;
+}
+
+.showpass {
+  position: absolute;
+
+  left: 218px;
+  bottom: 20px;
+}
+
+.updateForm {
+  height: 100vh;
+  background-image: url(../../public/picture/RegisterBG.jpg);
+  background-position: center;
+  background-size: cover;
+}
+//detail
+
+.detail {
+  background-color: #f18720;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3),
+    0 0 50px 0 rgba(0, 0, 0, 0.4) inset;
+  width: 90%;
+  margin: 0 auto !important;
+  display: block;
+  color: white;
+  padding-top: 100px;
+}
+.img-detail {
+  width: 230px;
+}
+
+
+
 .cinema-title {
   font-family: "Futurab";
   font-weight: normal;
@@ -433,59 +456,85 @@ h3.content::after {
   padding-left: 40px;
 }
 
-.cinema-wrap {
+
+.l-social {
   position: relative;
-  width: 93%;
-  height: 600px;
-  margin: 0 auto;
-  overflow: scroll;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 5px 2px;
 }
-.seat {
-  width: 50px;
-  height: 50px;
-  position: relative;
-  padding: 0;
+.l-social li {
+  display: inline-block;
 }
-.delete-seat {
-  line-height: 45px;
-}
-.description {
-  padding: 40px;
-  padding-top: 68px;
-}
-.description-child {
-  width: 132px;
-  height: 61px;
+.l-social li:first-child {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 7px;
 }
 
-.info-film {
-  padding: 10px;
-  box-shadow: #eeeeee 0px 22px 70px 4px;
-  background: url("https://vidyasheela.com/web-contents/website-components/Login-Pages/transparent-login-page-template-in-html-and-css/background-img.jpg")
-    rgba(0, 0, 0, 0.61);
-  background-repeat: no-repeat;
+.l-facebook {
+  width: 44px;
+  height: 44px;
+  background: url(../images/scl_facebook.png) no-repeat center center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
   background-size: cover;
-  background-blend-mode: darken;
-  color: wheat;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  -webkit-background-size: cover;
+  text-indent: 9999px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.img-booking {
-  width: 300px;
-  height: 400px;
-  object-fit: cover;
+.l-social .l-facebook,
+.l-social .l-google {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 0;
 }
-.title-invoice {
-  text-transform: uppercase;
+.l-social li {
+  display: block;
+  font-family: "MyriadLight";
+  font-weight: normal;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 3px;
+}
+.l-google {
+  width: 44px;
+  height: 44px;
+  background: url(../images/scl_google.png) no-repeat center center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  text-indent: 9999px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.l-facebook:hover,
+.l-google:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.timeDate {
   font-size: 20px;
 }
-.table-hover tbody tr:hover {
-  color: #fe975b !important;
-  background-color: rgb(255 255 255 / 15%) !important;
-}
+
+
+//media 
+
 @media screen and (max-width: 1100px) {
   .cinema-wrap {
     display: block;
@@ -505,7 +554,7 @@ h3.content::after {
   .title-invoice {
     font-size: auto;
   }
-  
+
   .title-movi {
     font-size: 20px;
   }
@@ -517,71 +566,34 @@ h3.content::after {
     width: 148px !important;
     height: 182px !important;
     padding: 10px !important;
+  }
 }
-}
+
 
 @media screen and (max-width: 750px) {
-
   .invoice-content .col-8 {
-    
     flex: 0 0 66.666667%;
     max-width: 100% !important;
   }
   .invoice-content .col-4 {
     margin-top: 30px;
-    margin-left: 40px;
+    margin-left: 70px;
     flex: 0 0 70.333333% !important;
     max-width: 100% !important;
   }
-  .history-right .col-10{
+  .history-right .col-10 {
     padding-left: 68px;
     max-width: 100%;
   }
 }
 
 @media screen and (max-width: 530px) {
-  .history-right .col-10{
+  .history-right .col-10 {
     padding-left: 1px;
     padding-top: 74px;
-    max-width: 100%; 
+    max-width: 100%;
   }
   .info-film {
     width: 405px;
   }
-}
-
-//userinfo
-.img-ticket {
-  width: 200px;
-  height: 188px;
-  padding: 10px;
-}
-
-.img-cinema {
-  width: 95px;
-    height: 83px;
-    padding: 10px;
-
-}
-
-.tab-cinema {
-  overflow: scroll;
-}
-
-.showpass {
-  position: absolute;
-
-  left: 218px;
-  bottom: 20px;
-}
-
-.updateForm {
-  height: 100vh;
-  background-image: url(../../public/picture/RegisterBG.jpg);
-  background-position: center;
-  background-size: cover;
-}
-//detail 
-.img-detail {
-width: 230px;
 }

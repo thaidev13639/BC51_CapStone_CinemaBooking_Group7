@@ -16,13 +16,13 @@ export default function Home() {
   const navigate = useNavigate();
   const [search, setSearch] = useState({});
   const [movieList, setMovieList] = useState([]);
-  // const [loadingState,setLoadingState] = useContext(LoadingContext);
+   const [loadingState,setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchMovieList();
   }, []);
   const fetchMovieList = async () => {
-    // setLoadingState({ isLoading : true});
+     setLoadingState({ isLoading : true});
 
     const result = await movieService.fetchMovieListApi();
     console.log(result);
@@ -31,7 +31,7 @@ export default function Home() {
       keyword: "",
     });
 
-    // setLoadingState({ isLoading : false});
+   setLoadingState({ isLoading : false});
   };
 
   const handleChange = async (event) => {

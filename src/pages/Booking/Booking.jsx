@@ -5,13 +5,13 @@ import { filter, sumBy } from "lodash";
 import { Alert, Button, Popconfirm, notification } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCouch } from "@fortawesome/free-solid-svg-icons";
-// import { LoadingContext } from "../../contexts/LoadingContext/LoadingContext";
+ import { LoadingContext } from "../../contexts/LoadingContext/LoadingContext";
 
 export default function Booking() {
   const params = useParams();
   const [movieDetail, setMovieDetail] = useState({});
   const [chairList, setChairList] = useState([]);
-  // const [loadingState,setLoadingState] = useContext(LoadingContext);
+   const [loadingState,setLoadingState] = useContext(LoadingContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Booking() {
   }, []);
 
   const fetchTicketDetail = async () => {
-    // setLoadingState({ isLoading : true});
+     setLoadingState({ isLoading : true});
     const result = await ticketService.fetchTicketDetailApi(params.id);
     setMovieDetail(result.data.content.thongTinPhim);
     setChairList(
@@ -36,7 +36,7 @@ export default function Booking() {
       })
     );
     console.log(result);
-    // setLoadingState({ isLoading : false});
+     setLoadingState({ isLoading : false});
   };
   const handleSelect = (chair) => {
     const data = [...chairList];
@@ -143,16 +143,18 @@ export default function Booking() {
       }),
     };
 
-    const upload = await ticketService.bookTicketApi(body);
-    if (upload) {
+     await ticketService.bookTicketApi(body);
+    
       //navigate
+      
+   
       notification.success({
         message: "Đặt vé Thành Công!!",
         placement: "topRight",
         duration: 5,
       });
       navigate(0);
-    }
+    
   };
 
   const handleCancel = () => {
@@ -171,12 +173,12 @@ export default function Booking() {
             <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-secondary description-child">
              
              <FontAwesomeIcon icon={faCouch} style={{ color: "#454952" }} />  <br />
-             Ghế đã đặt 
+             Ghế chưa đặt 
             </div>
             <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-dark description-child">
           
              <FontAwesomeIcon icon={faCouch} style={{ color: "#72767e" }} /> <br />
-             Ghế chưa đặt
+             Ghế đã đặt 
             </div>
             <div className="mr-1 mb-1 d-inline-block p-2 rounded text-white bg-primary description-child">
             <FontAwesomeIcon icon={faCouch} style={{ color: "#72767e" }} /> <br />

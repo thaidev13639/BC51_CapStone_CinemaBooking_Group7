@@ -455,16 +455,6 @@ h3.content::after {
   background-color: #f26b38;
 }
 
-.detail {
-  background-color: #f18720;
-  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3), 0 0 50px 0 rgba(0, 0, 0, 0.4) inset;
-  width: 90%;
-  margin: 0 auto !important;
-  display: block;
-  color: white;
-  padding-top: 100px;
-}
-
 .film-item-but {
   position: relative;
   display: inline-block;
@@ -526,85 +516,6 @@ h3.content::after {
   background-color: #fecf06;
   color: #000;
   text-decoration: none;
-}
-
-.l-social {
-  position: relative;
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-  display: inline-block;
-  vertical-align: bottom;
-  margin: 5px 2px;
-}
-
-.l-social li {
-  display: inline-block;
-}
-
-.l-social li:first-child {
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 7px;
-}
-
-.l-facebook {
-  width: 44px;
-  height: 44px;
-  background: url(../images/scl_facebook.png) no-repeat center center;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  background-size: cover;
-  -webkit-background-size: cover;
-  text-indent: 9999px;
-  margin-bottom: 10px;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.l-social .l-facebook,
-.l-social .l-google {
-  width: 54px;
-  height: 54px;
-  margin-bottom: 0;
-}
-
-.l-social li {
-  display: block;
-  font-family: "MyriadLight";
-  font-weight: normal;
-  font-size: 14px;
-  color: #fff;
-  margin-bottom: 3px;
-}
-
-.l-google {
-  width: 44px;
-  height: 44px;
-  background: url(../images/scl_google.png) no-repeat center center;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  background-size: cover;
-  -webkit-background-size: cover;
-  text-indent: 9999px;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.l-facebook:hover,
-.l-google:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-.timeDate {
-  font-size: 20px;
 }
 
 .button-17 {
@@ -693,32 +604,34 @@ h3.content::after {
   transition: box-shadow 0.15s ease 0s, transform 0.15s ease 0s;
 }
 
-.cinema-title {
-  font-family: "Futurab";
-  font-weight: normal;
-  font-size: 24px;
-  color: #fff;
-  display: block;
-  background-color: #969696;
+.img-booking {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.title-invoice {
   text-transform: uppercase;
-  border: 1px solid #fff;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  line-height: 42px;
-  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin-bottom: 40px;
+  font-size: 20px;
 }
 
-.cinema-note {
-  position: relative;
-  width: 100%;
-  margin: 0 0 30px 0;
+.table-hover tbody tr:hover {
+  color: #fe975b !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-.cinema-note li.road {
-  position: relative;
-  padding-left: 40px;
+.info-film {
+  padding: 10px;
+  box-shadow: #eeeeee 0px 22px 70px 4px;
+  background: url("https://vidyasheela.com/web-contents/website-components/Login-Pages/transparent-login-page-template-in-html-and-css/background-img.jpg") rgba(0, 0, 0, 0.61);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  color: wheat;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .cinema-wrap {
@@ -750,34 +663,154 @@ h3.content::after {
   height: 61px;
 }
 
-.info-film {
+.img-ticket {
+  width: 200px;
+  height: 188px;
   padding: 10px;
-  box-shadow: #eeeeee 0px 22px 70px 4px;
-  background: url("https://vidyasheela.com/web-contents/website-components/Login-Pages/transparent-login-page-template-in-html-and-css/background-img.jpg") rgba(0, 0, 0, 0.61);
-  background-repeat: no-repeat;
+}
+
+.img-cinema {
+  width: 95px;
+  height: 83px;
+  padding: 10px;
+}
+
+.tab-cinema {
+  overflow: scroll;
+}
+
+.showpass {
+  position: absolute;
+  left: 218px;
+  bottom: 20px;
+}
+
+.updateForm {
+  height: 100vh;
+  background-image: url(../../public/picture/RegisterBG.jpg);
+  background-position: center;
   background-size: cover;
-  background-blend-mode: darken;
-  color: wheat;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
-.img-booking {
-  width: 300px;
-  height: 400px;
-  object-fit: cover;
+.detail {
+  background-color: #f18720;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3), 0 0 50px 0 rgba(0, 0, 0, 0.4) inset;
+  width: 90%;
+  margin: 0 auto !important;
+  display: block;
+  color: white;
+  padding-top: 100px;
 }
 
-.title-invoice {
+.img-detail {
+  width: 230px;
+}
+
+.cinema-title {
+  font-family: "Futurab";
+  font-weight: normal;
+  font-size: 24px;
+  color: #fff;
+  display: block;
+  background-color: #969696;
   text-transform: uppercase;
-  font-size: 20px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  line-height: 42px;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.table-hover tbody tr:hover {
-  color: #fe975b !important;
-  background-color: rgba(255, 255, 255, 0.15) !important;
+.cinema-note {
+  position: relative;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.cinema-note li.road {
+  position: relative;
+  padding-left: 40px;
+}
+
+.l-social {
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 5px 2px;
+}
+
+.l-social li {
+  display: inline-block;
+}
+
+.l-social li:first-child {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.l-facebook {
+  width: 44px;
+  height: 44px;
+  background: url(../images/scl_facebook.png) no-repeat center center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  text-indent: 9999px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.l-social .l-facebook,
+.l-social .l-google {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 0;
+}
+
+.l-social li {
+  display: block;
+  font-family: "MyriadLight";
+  font-weight: normal;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.l-google {
+  width: 44px;
+  height: 44px;
+  background: url(../images/scl_google.png) no-repeat center center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  text-indent: 9999px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.l-facebook:hover,
+.l-google:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.timeDate {
+  font-size: 20px;
 }
 
 @media screen and (max-width: 1100px) {
@@ -818,7 +851,7 @@ h3.content::after {
   }
   .invoice-content .col-4 {
     margin-top: 30px;
-    margin-left: 40px;
+    margin-left: 70px;
     flex: 0 0 70.333333% !important;
     max-width: 100% !important;
   }
@@ -837,39 +870,6 @@ h3.content::after {
     width: 405px;
   }
 }
-.img-ticket {
-  width: 200px;
-  height: 188px;
-  padding: 10px;
-}
-
-.img-cinema {
-  width: 95px;
-  height: 83px;
-  padding: 10px;
-}
-
-.tab-cinema {
-  overflow: scroll;
-}
-
-.showpass {
-  position: absolute;
-  left: 218px;
-  bottom: 20px;
-}
-
-.updateForm {
-  height: 100vh;
-  background-image: url(../../public/picture/RegisterBG.jpg);
-  background-position: center;
-  background-size: cover;
-}
-
-.img-detail {
-  width: 230px;
-}
-
 .form-login {
   display: flex;
   flex-direction: column;
