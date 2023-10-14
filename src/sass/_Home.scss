@@ -490,6 +490,7 @@ h3.content::after {
 }
 table .invocie {
     color: wheat;
+    font-size: 23px;
 }
 .table-hover tbody tr:hover {
     color: #fe975b !important;
@@ -532,4 +533,11 @@ table .invocie {
     /* height: 40px; */
     left: 218px;
     bottom: 20px;
+}
+
+.updateForm {
+  height: 100vh;
+   background-image: url(../../public/picture/RegisterBG.jpg); 
+   background-position: center; 
+  background-size: cover;
 }

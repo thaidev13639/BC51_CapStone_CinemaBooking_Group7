@@ -11,7 +11,7 @@ export default function MovieDetail() {
       <div className="col-12 ">
        <Detail/>
       </div>
-      <div id="tabList" className="col-12 mt-5" style={{display:"none"}}>
+      <div id="tabList" className="col-12 mt-5" style={{display:"none"}} >
         <ShowTimes/>
       </div>
     </div>

@@ -32,6 +32,7 @@ class UserService {
     return requestApi({
       url: "/QuanLyNguoiDung/CapNhatThongTinNguoiDung",
       method: "PUT",
+      data,
     });
   }
 }
