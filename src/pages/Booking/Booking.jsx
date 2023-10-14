@@ -61,9 +61,7 @@ export default function Booking() {
 
       return (
         <React.Fragment key={element.maGhe}>
-         
-          
-         
+        
           <td>
           <button
             disabled={element.daDat}
@@ -74,9 +72,10 @@ export default function Booking() {
             {element.tenGhe}
           </button>
           </td>
-          {(idx + 1) % 16 === 0 && <br /> }
-          
+           {(idx + 1) % 16 === 0 && <br /> }
+        
         </React.Fragment>
+        
       );
     });
   };
@@ -86,9 +85,7 @@ export default function Booking() {
 
     return data.map((element, idx) => {
       return (
-        // <p key={element.maGhe} className="badge badge-success mr-2 mb-0">
-        //   {element.tenGhe}
-        // </p>
+       
         <tr>
           <th key={element.maGhe} scope="row">
             {idx + 1}
@@ -112,13 +109,6 @@ export default function Booking() {
   };
 
   const renderTotalPrice = () => {
-    // const data = chairList.filter((element) => element.dangChon);
-
-    // const total = data.reduce((total, element) => {
-    //   total += element.giaVe;
-
-    //   return total;
-    // }, 0);
 
     const data = filter(chairList, "dangChon");
     const total = sumBy(data, "giaVe");
@@ -155,13 +145,12 @@ export default function Booking() {
     const upload = await ticketService.bookTicketApi(body);
     if (upload) {
       //navigate
-
-      navigate(0);
       notification.success({
         message: "Đặt vé Thành Công!!",
         placement: "topRight",
-        duration: 3,
+        duration: 5,
       });
+      navigate(0);
     }
   };
 
@@ -202,11 +191,13 @@ export default function Booking() {
           </div>
         </div>
         <div className="col-8">
-          <h3 class="cinema-title">Màn hình</h3>
+          <h3 className="cinema-title">Màn hình</h3>
           <div className="cinema-wrap">
-            <div style={{ width: "95%" }} className="">
-              {renderChairList()}
-            </div>
+            
+           {renderChairList()}
+              
+           
+              
           </div>
         </div>
         <div className="col-4 info-film">
@@ -230,15 +221,15 @@ export default function Booking() {
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col"> Tên ghế </th>
-                <th scope="col"> Loại ghế </th>
+                <th scope="col"> Tên ghế  || </th>
+                <th scope="col"> Loại ghế || </th>
                 <th scope="col"> Tiền </th>
               </tr>
             </thead>
             <tbody>
               {renderSeatList()}
 
-              <hr />
+             
 
               <tr>
                 <th scope="row">Tỗng tiền</th>

@@ -18,13 +18,9 @@ const items = [
   {
     key: '2',
     label:<h4 style={{color:"white"}}> Cập nhật thông tin </h4>,
-    children: <UpdateUserInf/>,
+    children:  <UpdateUserInf/>,
   },
-  {
-    key: '3',
-    label: 'Tab 3',
-    children: 'Content of Tab Pane 3',
-  },
+ 
 ];
   return (
 
@@ -34,14 +30,7 @@ const items = [
     <div className="container">
 
     <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
-      {/* <div className="row">
-        <div className="col-12 ">
-        <HistoryTicket/>
-        </div>
-        <div id="tabList" className="col-12 mt-5" >
-         <UpdateUserInf/>
-        </div>
-      </div> */}
+     
      
     </div>
   </div>

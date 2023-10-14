@@ -53,3 +53,27 @@ export const validationAddShowTime = yup.object().shape({
     .max(150000)
     .required(" (*) vui lòng nhập đánh giá"),
 });
+
+
+export const validateInfo = yup.object().shape({
+  taiKhoan: yup
+    .string()
+    .min(5)
+    .matches(rulesUser, { message: "Pls! enter valid account: name789" })
+    .required("Pls! enter account"),
+  matKhau: yup
+    .string()
+    .min(5)
+    .matches(rulesPass, { message: "Pls! create strong password: Name@123" })
+    .required("Pls! enter password"),
+  
+  email: yup
+    .string()
+    .email("Please enter valid email")
+    .required("Plss! enter email"),
+  soDt: yup.string().min(9).max(10).required("Pls! enter phone number"),
+  hoTen: yup
+    .string()
+    .matches(rulesName, { message: "please enter valid Name" })
+    .required("Pls! enter fullname"),
+});

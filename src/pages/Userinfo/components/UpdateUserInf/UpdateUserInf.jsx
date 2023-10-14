@@ -1,23 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { userSvervice } from "../../../../services/user";
-import { Link, useNavigate } from "react-router-dom";
-import { notification } from "antd";
+import { useNavigate } from "react-router-dom";
+import { Form, formik, notification } from "antd";
 import { useFormik } from "formik";
-import { validate } from "../../../../ValidateYup/ValidateYup";
+import { useDispatch } from "react-redux";
 import { EyeOutlined } from "@ant-design/icons";
+import { validateInfo } from "../../../../ValidateYup/ValidateYup";
+import Item from "antd/es/list/Item";
+import { loginAction } from "../../../../store/actions/loginAction";
 
 export default function UpdateUserInf() {
-  // let tKhoan = {};
-  // const string = localStorage.getItem("INFO_ACCOUNT");
-  // console.log(string);
-  // if (string) {
-  //   tKhoan = JSON.parse(string);
-   
-  // }
-  // console.log(tKhoan);
-  
   const navigate = useNavigate();
-  const [stateInfoUser, setInfoUser] = useState({});
+
+  const dispatch = useDispatch();
+
   const [pasword, setPassword] = useState("password");
   const [data, setData] = useState({});
 
@@ -44,17 +40,24 @@ export default function UpdateUserInf() {
       setPassword("password");
     }
   };
- 
+
+  const hanldLogout = () => {
+    dispatch(loginAction(null));
+    localStorage.removeItem("INFO_ACCOUNT");
+    navigate("/");
+  };
 
   const editUser = async (data) => {
     try {
       await userSvervice.fetchUserInfo(data);
       notification.success({
-        message: "Chỉnh Sửa Thành Công",
+        message: "Chỉnh Sửa Thành Công ,Đăng nhập lại",
         placement: "bottomRight",
-        duration: 2,
+        duration: 4,
       });
-      navigate("/thongtincanhan");
+
+      hanldLogout();
+      // navigate("/thongtincanhan");
     } catch (error) {
       console.log(error);
       notification.warning({
@@ -65,140 +68,140 @@ export default function UpdateUserInf() {
     }
   };
 
-  
-
-  const handlChangeValue = (name) => {
-    return (value) => {
-      form.setFieldValue(name, value);
-    };
-  };
-
-  const form = useFormik({
+  const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      taiKhoan: data.taiKhoan,
-      matKhau: data.matKhau,
-      email: data.email,
-      soDt: data.soDT,
-      hoTen: data.hoTen,
+      taiKhoan: data?.taiKhoan,
+      matKhau: data?.matKhau,
+      email: data?.email,
+      soDt: data?.soDT,
+      maNhom: "GP01",
+      maLoaiNguoiDung: "khachHang",
+      hoTen: data?.hoTen,
     },
-    validationSchema: validate,
-    onSubmit: async (values) => {
-      let formData = new FormData();
-      editUser(formData);
+    validationSchema: validateInfo,
+    onSubmit: (values) => {
+      console.log(values);
+
+      //  let formData = new FormData();
+
+      editUser(values);
     },
   });
+
   return (
-    <div className="register">
-      <form className="form-register" onSubmit={form.handleSubmit}>
+    <div className="updateForm">
+      <form className="form-register" onSubmitCapture={formik.handleSubmit}>
         <p className="title-register">Cập nhật thông tin </p>
         <p className="message-register">
           Signup now and get full access to our app.{" "}
         </p>
         <label>
-      
           <input
-            onBlur={form.handleBlur}
-            onChange={form.handleChange}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
             name="taiKhoan"
             className={`input-register ${
-              form.errors.taiKhoan && form.touched.taiKhoan ? "input-erorr" : ""
+              formik.errors.taiKhoan && formik.touched.taiKhoan
+                ? "input-erorr"
+                : ""
             }`}
             type="text"
             required
-            value={form.values.taiKhoan}
+            value={formik.values.taiKhoan}
           />
           <span>Account</span>
-         
-          {form.errors.taiKhoan && form.touched.taiKhoan && (
-            <span className="text-danger">{form.errors.taiKhoan}</span>
+
+          {formik.errors.taiKhoan && formik.touched.taiKhoan && (
+            <span className="text-danger">{formik.errors.taiKhoan}</span>
           )}
-          
         </label>
         <div className="flex-register">
           <label>
-         
             <input
-              onBlur={form.handleBlur}
-              onChange={form.handleChange}
+              onBlur={formik.handleBlur}
+              onChange={formik.handleChange}
               name="matKhau"
               className={`input-register ${
-                form.errors.matKhau && form.touched.matKhau ? "input-erorr" : ""
+                formik.errors.matKhau && formik.touched.matKhau
+                  ? "input-erorr"
+                  : ""
               }`}
               type={pasword}
               required
               autoComplete="on"
-              value={form.values.matKhau}
-              
+              value={formik.values.matKhau}
             />
-             
+
             <span>Password</span>
-          
-           
-            {form.errors.matKhau && form.touched.matKhau && (
-              <span className="text-danger">{form.errors.matKhau}</span>
+
+            {formik.errors.matKhau && formik.touched.matKhau && (
+              <span className="text-danger">{formik.errors.matKhau}</span>
             )}
-              
           </label>
-          <EyeOutlined style={{width:"50px",height:"50px"}} className=""  onClick={() => handlePass()} />
+          <EyeOutlined
+            style={{ width: "50px", height: "50px" }}
+            className=""
+            onClick={() => handlePass()}
+          />
         </div>
         <label>
           <input
-            onBlur={form.handleBlur}
-            onChange={form.handleChange}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
             name="hoTen"
             className={`input-register ${
-              form.errors.hoTen && form.touched.hoTen ? "input-erorr" : ""
+              formik.errors.hoTen && formik.touched.hoTen ? "input-erorr" : ""
             }`}
             type="text"
             required
-            value={form.values.hoTen}
+            value={formik.values.hoTen}
           />
 
           <span>Full Name</span>
-          {form.errors.hoTen && form.touched.hoTen && (
-            <span className="text-danger">{form.errors.hoTen}</span>
+          {formik.errors.hoTen && formik.touched.hoTen && (
+            <span className="text-danger">{formik.errors.hoTen}</span>
           )}
         </label>
         <label>
           <input
-            onBlur={form.handleBlur}
-            onChange={form.handleChange}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
             name="email"
             className={`input-register ${
-              form.errors.email && form.touched.email ? "input-erorr" : ""
+              formik.errors.email && formik.touched.email ? "input-erorr" : ""
             }`}
             type="text"
             required
-            value={form.values.email}
+            value={formik.values.email}
           />
           <span>Email</span>
-          {form.errors.email && form.touched.email && (
-            <span className="text-danger">{form.errors.email}</span>
+          {formik.errors.email && formik.touched.email && (
+            <span className="text-danger">{formik.errors.email}</span>
           )}
         </label>
         <label>
           <input
-            onBlur={form.handleBlur}
-            onChange={form.handleChange}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
             name="soDt"
             className={`input-register ${
-              form.errors.soDt && form.touched.soDt ? "input-erorr" : ""
+              formik.errors.soDt && formik.touched.soDt ? "input-erorr" : ""
             }`}
             type="number"
             required
-            value={form.values.soDt}
+            value={formik.values.soDt}
           />
           <span>Phone Number</span>
-          {form.errors.soDt && form.touched.soDt && (
-            <span className="text-danger">{form.errors.soDt}</span>
+          {formik.errors.soDt && formik.touched.soDt && (
+            <span className="text-danger">{formik.errors.soDt}</span>
           )}
         </label>
-        <button type="submit" className="submit-register">
-          Submit
+
+        <button className="btn btn-success" type="submit">
+          Sửa Thông Tin
         </button>
-        
       </form>
     </div>
-  )
+  );
 }
