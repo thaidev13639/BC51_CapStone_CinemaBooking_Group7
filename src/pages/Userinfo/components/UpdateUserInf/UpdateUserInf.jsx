@@ -101,10 +101,9 @@ export default function UpdateUserInf() {
         </p>
         <label>
           <input
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
+          
             name="taiKhoan"
-            disabled="true"
+            disabled={true}
             className="input-register "
             type="text"
             required

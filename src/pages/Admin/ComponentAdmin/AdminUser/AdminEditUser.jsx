@@ -88,7 +88,7 @@ export default function AdminEditUser() {
             <h3 style={{ marginBottom: "5%", textTransform: "uppercase" }}>Chỉnh Sửa Thông Tin Người Dùng</h3>
 
             <Form.Item label="Tài Khoản">
-                <Input style={{ width: "50%" }} name='taiKhoan' onChange={formik.handleChange} disabled="true" value={formik.values?.taiKhoan} /> <br />
+                <Input style={{ width: "50%" }} name='taiKhoan' onChange={formik.handleChange} disabled={true} value={formik.values?.taiKhoan} /> <br />
                 {/* {formik.errors.taiKhoan && formik.touched.taiKhoan && (
                     <span className="text-danger">{formik.errors.taiKhoan}</span>
                 )} */}
