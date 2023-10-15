@@ -18,8 +18,8 @@ export const LoadingProvider = (props) => {
       
       {state.isLoading && (
       <div className="wrapper-spin">
-      <div class="loadingio-spinner-spinner-c5cyy9uzkj7">
-        <div class="ldio-7y2d2dwt8dm">
+      <div className="loadingio-spinner-spinner-c5cyy9uzkj7">
+        <div className="ldio-7y2d2dwt8dm">
           <div></div>
           <div></div>
           <div></div>
