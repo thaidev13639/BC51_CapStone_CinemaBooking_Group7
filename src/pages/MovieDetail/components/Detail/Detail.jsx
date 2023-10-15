@@ -20,7 +20,7 @@ export default function Detail() {
     setLoadingState({ isLoading : true});
 
     const result = await movieService.fetchMovieDetailApi(params.movieId);
-    console.log(result);
+    
     setDetail(result.data.content);
 
     setLoadingState({ isLoading : false});
@@ -70,8 +70,6 @@ export default function Detail() {
           </div>
         
          
-
-
       </div>
     </div>
   );

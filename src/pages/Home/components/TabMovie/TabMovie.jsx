@@ -89,8 +89,7 @@ export default function TabMovie() {
   return (
     <div className="container bg-white p-4 tab-cinema">
       <Tabs tabPosition="left">
-        {/* <TabPane tab="Tab 1" key="1">Content of tab 1</TabPane>
-         */}
+       
         {renderTabList()}
       </Tabs>
     </div>
