@@ -27,7 +27,7 @@ const items = [
 
 
     <div className="detail ">
-    <div className="container">
+    <div className="container  ">
 
     <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
      

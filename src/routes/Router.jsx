@@ -20,12 +20,16 @@ import Userinfo from "../pages/Userinfo/Userinfo";
 import AdminEditUser from "../pages/Admin/ComponentAdmin/AdminUser/AdminEditUser";
 import AdminDetail from "../pages/Admin/ComponentAdmin/AdminUser/AdminDetail";
 import AdminAddUser from "../pages/Admin/ComponentAdmin/AdminUser/AdminAddUser";
+import { LoadingProvider } from "../contexts/LoadingContext/LoadingContext";
 
 export default function Router() {
   const rooting = useRoutes([
     {
       path: "/",
-      element: <HomeLaysOut />,
+      element:
+        <LoadingProvider>
+          <HomeLaysOut />,
+        </LoadingProvider>,
       children: [
         {
           path: "/",

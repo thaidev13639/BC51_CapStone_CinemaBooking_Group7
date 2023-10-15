@@ -319,6 +319,11 @@ hr {
   transform: scale(1);
 }
 
+.movie-card {
+  margin-bottom: 20px;
+  height: 500px;
+}
+
 .entry-hover {
   position: absolute;
   top: 1px;
@@ -450,20 +455,9 @@ h3.content::after {
   background-color: #f26b38;
 }
 
-.detail {
-  background-color: #f18720;
-  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3), 0 0 50px 0 rgba(0, 0, 0, 0.4) inset;
-  width: 90%;
-  margin: 0 auto !important;
-  display: block;
-  color: white;
-  padding-top: 100px;
-}
-
 .film-item-but {
   position: relative;
   display: inline-block;
-  text-align: center;
   width: 100%;
 }
 
@@ -522,85 +516,6 @@ h3.content::after {
   background-color: #fecf06;
   color: #000;
   text-decoration: none;
-}
-
-.l-social {
-  position: relative;
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-  display: inline-block;
-  vertical-align: bottom;
-  margin: 5px 2px;
-}
-
-.l-social li {
-  display: inline-block;
-}
-
-.l-social li:first-child {
-  display: block;
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 7px;
-}
-
-.l-facebook {
-  width: 44px;
-  height: 44px;
-  background: url(../images/scl_facebook.png) no-repeat center center;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  background-size: cover;
-  -webkit-background-size: cover;
-  text-indent: 9999px;
-  margin-bottom: 10px;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.l-social .l-facebook,
-.l-social .l-google {
-  width: 54px;
-  height: 54px;
-  margin-bottom: 0;
-}
-
-.l-social li {
-  display: block;
-  font-family: "MyriadLight";
-  font-weight: normal;
-  font-size: 14px;
-  color: #fff;
-  margin-bottom: 3px;
-}
-
-.l-google {
-  width: 44px;
-  height: 44px;
-  background: url(../images/scl_google.png) no-repeat center center;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  background-size: cover;
-  -webkit-background-size: cover;
-  text-indent: 9999px;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.l-facebook:hover,
-.l-google:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-.timeDate {
-  font-size: 20px;
 }
 
 .button-17 {
@@ -689,48 +604,34 @@ h3.content::after {
   transition: box-shadow 0.15s ease 0s, transform 0.15s ease 0s;
 }
 
-.cinema-title {
-  font-family: "Futurab";
-  font-weight: normal;
-  font-size: 24px;
-  color: #fff;
-  display: block;
-  background-color: #969696;
+.img-booking {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.title-invoice {
   text-transform: uppercase;
-  border: 1px solid #fff;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  line-height: 42px;
-  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin-bottom: 40px;
+  font-size: 20px;
 }
 
-.cinema-note {
-  position: relative;
-  width: 100%;
-  margin: 0 0 30px 0;
+.table-hover tbody tr:hover {
+  color: #fe975b !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
-.cinema-note li.single {
-  padding-left: 50px;
-}
-
-.cinema-note li.couple {
-  padding-left: 90px;
-}
-
-.cinema-note li.choosing {
-  padding-left: 50px;
-}
-
-.cinema-note li.busy {
-  padding-left: 50px;
-}
-
-.cinema-note li.road {
-  position: relative;
-  padding-left: 40px;
+.info-film {
+  padding: 10px;
+  box-shadow: #eeeeee 0px 22px 70px 4px;
+  background: url("https://vidyasheela.com/web-contents/website-components/Login-Pages/transparent-login-page-template-in-html-and-css/background-img.jpg") rgba(0, 0, 0, 0.61);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  color: wheat;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .cinema-wrap {
@@ -762,38 +663,6 @@ h3.content::after {
   height: 61px;
 }
 
-.info-film {
-  padding: 10px;
-  box-shadow: #EEEEEE 0px 22px 70px 4px;
-  background: url("https://vidyasheela.com/web-contents/website-components/Login-Pages/transparent-login-page-template-in-html-and-css/background-img.jpg") rgba(0, 0, 0, 0.61);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: darken;
-  color: wheat;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-table .invocie {
-  color: wheat;
-  font-size: 23px;
-}
-
-.table-hover tbody tr:hover {
-  color: #fe975b !important;
-  background-color: rgba(255, 255, 255, 0.15) !important;
-}
-
-@media screen and (max-width: 1100px) {
-  .cinema-wrap {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-    padding: 0 0 5% 0;
-  }
-}
 .img-ticket {
   width: 200px;
   height: 188px;
@@ -801,8 +670,8 @@ table .invocie {
 }
 
 .img-cinema {
-  width: 100px;
-  height: 100px;
+  width: 95px;
+  height: 83px;
   padding: 10px;
 }
 
@@ -812,8 +681,6 @@ table .invocie {
 
 .showpass {
   position: absolute;
-  /* width: 40px; */
-  /* height: 40px; */
   left: 218px;
   bottom: 20px;
 }
@@ -825,6 +692,184 @@ table .invocie {
   background-size: cover;
 }
 
+.detail {
+  background-color: #f18720;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3), 0 0 50px 0 rgba(0, 0, 0, 0.4) inset;
+  width: 90%;
+  margin: 0 auto !important;
+  display: block;
+  color: white;
+  padding-top: 150px;
+}
+
+.img-detail {
+  width: 230px;
+}
+
+.cinema-title {
+  font-family: "Futurab";
+  font-weight: normal;
+  font-size: 24px;
+  color: #fff;
+  display: block;
+  background-color: #969696;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  line-height: 42px;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cinema-note {
+  position: relative;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.cinema-note li.road {
+  position: relative;
+  padding-left: 40px;
+}
+
+.l-social {
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 5px 2px;
+}
+
+.l-social li {
+  display: inline-block;
+}
+
+.l-social li:first-child {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.l-facebook {
+  width: 44px;
+  height: 44px;
+  background: url(../images/scl_facebook.png) no-repeat center center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  text-indent: 9999px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.l-social .l-facebook,
+.l-social .l-google {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 0;
+}
+
+.l-social li {
+  display: block;
+  font-family: "MyriadLight";
+  font-weight: normal;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.l-google {
+  width: 44px;
+  height: 44px;
+  background: url(../images/scl_google.png) no-repeat center center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  text-indent: 9999px;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.l-facebook:hover,
+.l-google:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.timeDate {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+  .cinema-wrap {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 0 5% 0;
+  }
+  .col-3 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  .img-booking {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+  .title-invoice {
+    font-size: auto;
+  }
+  .title-movi {
+    font-size: 20px;
+  }
+  .img-detail {
+    width: 400px !important;
+  }
+  .img-ticket {
+    width: 148px !important;
+    height: 182px !important;
+    padding: 10px !important;
+  }
+}
+@media screen and (max-width: 750px) {
+  .invoice-content .col-8 {
+    flex: 0 0 66.666667%;
+    max-width: 100% !important;
+  }
+  .invoice-content .col-4 {
+    margin-top: 30px;
+    margin-left: 70px;
+    flex: 0 0 70.333333% !important;
+    max-width: 100% !important;
+  }
+  .history-right .col-10 {
+    padding-left: 68px;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 530px) {
+  .history-right .col-10 {
+    padding-left: 1px;
+    padding-top: 74px;
+    max-width: 100%;
+  }
+  .info-film {
+    width: 405px;
+  }
+}
 .form-login {
   display: flex;
   flex-direction: column;

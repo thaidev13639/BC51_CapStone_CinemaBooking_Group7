@@ -7,10 +7,12 @@ import { formatDate } from "../../../../utils/date";
 export default function TabMovie() {
   const TabPane = Tabs.TabPane;
   const [tabList, setTabList] = useState([]);
+
   useEffect(() => {
     fetchTabList();
   }, []);
 
+  
   const fetchTabList = async () => {
     const result = await movieService.fetchMovieTabApi();
     console.log(result);
@@ -48,7 +50,7 @@ export default function TabMovie() {
                               height={150}
                               src={phim.hinhAnh}
                               alt={phim.tenPhim}
-                              onError={(e) => {e.target.onError = null;e.target ="https://www.computerhope.com/jargon/e/error.png"}}
+                               onError={(e) => {e.target.onError = null;e.target.src="https://www.computerhope.com/jargon/e/error.png"}}
 
                             />
                             <div className="ml-2 mt-2">
@@ -85,7 +87,7 @@ export default function TabMovie() {
     });
   };
   return (
-    <div className="container bg-white p-4">
+    <div className="container bg-white p-4 tab-cinema">
       <Tabs tabPosition="left">
         {/* <TabPane tab="Tab 1" key="1">Content of tab 1</TabPane>
          */}

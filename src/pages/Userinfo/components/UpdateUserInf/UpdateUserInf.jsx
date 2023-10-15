@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { userSvervice } from "../../../../services/user";
 import { useNavigate } from "react-router-dom";
-import { Form, formik, notification } from "antd";
+import {  notification } from "antd";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { EyeOutlined } from "@ant-design/icons";
 import { validateInfo } from "../../../../ValidateYup/ValidateYup";
-import Item from "antd/es/list/Item";
 import { loginAction } from "../../../../store/actions/loginAction";
+import { LoadingContext } from "../../../../contexts/LoadingContext/LoadingContext";
 
 export default function UpdateUserInf() {
   const navigate = useNavigate();
@@ -16,6 +16,7 @@ export default function UpdateUserInf() {
 
   const [pasword, setPassword] = useState("password");
   const [data, setData] = useState({});
+  const [loadingState,setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchUserInfo();
@@ -23,9 +24,11 @@ export default function UpdateUserInf() {
 
   const fetchUserInfo = async () => {
     try {
+      setLoadingState({ isLoading : true});
       const result = await userSvervice.fetchUserTicket();
       setData(result.data.content);
       console.log(result.data.content);
+      setLoadingState({ isLoading : false});
     } catch (error) {
       notification.warning({
         message: "không thể lấy thông tin",
@@ -75,7 +78,7 @@ export default function UpdateUserInf() {
       matKhau: data?.matKhau,
       email: data?.email,
       soDt: data?.soDT,
-      maNhom: "GP01",
+      maNhom: "GP00",
       maLoaiNguoiDung: "khachHang",
       hoTen: data?.hoTen,
     },

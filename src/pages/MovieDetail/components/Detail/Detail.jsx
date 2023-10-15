@@ -10,27 +10,27 @@ import { LoadingContext } from "../../../../contexts/LoadingContext/LoadingConte
 export default function Detail() {
   const params = useParams();
   const [detail, setDetail] = useState({});
-  //const [loadingState,setLoadingState] = useContext(LoadingContext);
+  const [loadingState,setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchMovieDetail();
   }, []);
 
   const fetchMovieDetail = async () => {
-   // setLoadingState({ isLoading : true});
+    setLoadingState({ isLoading : true});
 
     const result = await movieService.fetchMovieDetailApi(params.movieId);
     console.log(result);
     setDetail(result.data.content);
 
-    //setLoadingState({ isLoading : false});
+    setLoadingState({ isLoading : false});
       
   };
 
   return (
     <div className="row">
       <div className="col-3">
-        <img className="animate__animated animate__bounceInLeft  w-100" src={detail.hinhAnh} />
+        <img className="animate__animated animate__bounceInLeft img-detail " src={detail.hinhAnh} />
       </div>
       <div className=" animate__animated animate__bounceInLeft col-9">
         <h4>{detail.tenPhim}</h4>

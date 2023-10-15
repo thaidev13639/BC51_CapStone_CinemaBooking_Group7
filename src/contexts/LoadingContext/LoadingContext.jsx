@@ -14,7 +14,7 @@ export const LoadingProvider = (props) => {
 
   return (
     <LoadingContext.Provider value={[state, setState]}>
-
+      
       {state.isLoading && (
         <div className="wrapper-spin">
           <div className="loadingio-spinner-spinner-c5cyy9uzkj7">
