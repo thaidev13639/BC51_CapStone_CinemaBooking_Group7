@@ -8,7 +8,7 @@ import {
 import { useFormik } from 'formik';
 import { useNavigate, useParams } from 'react-router-dom';
 import { userSvervice } from '../../../../services/user'
-import { validateInfo } from '../../../../ValidateYup/ValidateYup';
+import { validateInfoAdmin } from '../../../../ValidateYup/ValidateYup';
 
 
 export default function AdminEditUser() {
@@ -35,7 +35,7 @@ export default function AdminEditUser() {
             maLoaiNguoiDung: userDetail?.maLoaiNguoiDung,
             maNhom: "GP00"
         },
-        validationSchema: validateInfo,
+        validationSchema: validateInfoAdmin,
         onSubmit: async (values) => {
             console.log(values)
             try {
@@ -88,10 +88,10 @@ export default function AdminEditUser() {
             <h3 style={{ marginBottom: "5%", textTransform: "uppercase" }}>Chỉnh Sửa Thông Tin Người Dùng</h3>
 
             <Form.Item label="Tài Khoản">
-                <Input style={{ width: "50%" }} name='taiKhoan' onChange={formik.handleChange} value={formik.values?.taiKhoan} /> <br />
-                {formik.errors.taiKhoan && formik.touched.taiKhoan && (
+                <Input style={{ width: "50%" }} name='taiKhoan' onChange={formik.handleChange} disabled="true" value={formik.values?.taiKhoan} /> <br />
+                {/* {formik.errors.taiKhoan && formik.touched.taiKhoan && (
                     <span className="text-danger">{formik.errors.taiKhoan}</span>
-                )}
+                )} */}
             </Form.Item>
             <Form.Item label="Họ Tên">
                 <Input style={{ width: "50%" }} name='hoTen' onChange={formik.handleChange} value={formik.values?.hoTen} /> <br />

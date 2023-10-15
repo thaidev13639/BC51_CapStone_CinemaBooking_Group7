@@ -27,9 +27,10 @@ export default function Router() {
     {
       path: "/",
       element:
-        <LoadingProvider>
-          <HomeLaysOut />,
-        </LoadingProvider>,
+      <LoadingProvider>
+        <HomeLaysOut />,
+      </LoadingProvider>,
+        
       children: [
         {
           path: "/",

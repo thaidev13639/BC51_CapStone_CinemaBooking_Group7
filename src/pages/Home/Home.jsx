@@ -16,7 +16,7 @@ export default function Home() {
   const navigate = useNavigate();
   const [search, setSearch] = useState({});
   const [movieList, setMovieList] = useState([]);
-   const [loadingState,setLoadingState] = useContext(LoadingContext);
+  const [loadingState,setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchMovieList();
@@ -24,8 +24,8 @@ export default function Home() {
   const fetchMovieList = async () => {
      setLoadingState({ isLoading : true});
 
-    const result = await movieService.fetchMovieListApi();
-
+    const result = await movieService.fetchMovieListApi("");
+   // console.log(result);
     setMovieList(result.data.content);
     setSearch({
       keyword: "",
