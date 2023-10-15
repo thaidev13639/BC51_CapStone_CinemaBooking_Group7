@@ -14,7 +14,7 @@ class TicketService {
     return requestApi({
       url: `/QuanLyDatVe/DatVe`,
       method:"POST",
-      data, //data = data,
+      data, 
       });
     }
 }

@@ -86,8 +86,6 @@ export default function UpdateUserInf() {
     onSubmit: (values) => {
       console.log(values);
 
-      //  let formData = new FormData();
-
       editUser(values);
     },
   });

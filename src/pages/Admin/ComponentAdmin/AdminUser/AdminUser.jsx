@@ -1,9 +1,8 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Table, notification } from 'antd';
-import { EditOutlined, DeleteOutlined, CalendarOutlined } from '@ant-design/icons';
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
 import { NavLink, useNavigate } from 'react-router-dom';
-// import { LoadingContext } from "../../../../contexts/LoadingContext/LoadingContext";
 import { userSvervice } from '../../../../services/user';
 
 
@@ -11,17 +10,14 @@ import { userSvervice } from '../../../../services/user';
 export default function AdminUser() {
   const navigate = useNavigate()
   const [listUser, setListUser] = useState([])
-  // const [loadingState, setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchListUser();
   }, [])
 
   const fetchListUser = async () => {
-    // setLoadingState({ isLoading: true });
     const userList = await userSvervice.fetchGetListUserApi("");
     setListUser(userList.data.content)
-    // setLoadingState({ isLoading: false });
   }
 
   const deleteUser = async (taiKhoan) => {
@@ -118,12 +114,10 @@ export default function AdminUser() {
 
   const onSearch = async (value) => {
     try {
-      // setLoadingState({ isLoading: true });
       const findUser = await userSvervice.fetchGetListUserApi(value)
 
       setListUser(findUser.data.content)
 
-      // setLoadingState({ isLoading: false });
 
     } catch (error) {
       console.log(error)

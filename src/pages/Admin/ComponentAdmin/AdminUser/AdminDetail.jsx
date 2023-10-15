@@ -8,7 +8,7 @@ import {
 import { useFormik } from 'formik';
 import { useNavigate, useParams } from 'react-router-dom';
 import { userSvervice } from '../../../../services/user'
-import { validateInfo } from '../../../../ValidateYup/ValidateYup';
+import { validateInfo, validateInfoAdmin } from '../../../../ValidateYup/ValidateYup';
 
 
 export default function AdminDetail() {
@@ -35,7 +35,7 @@ export default function AdminDetail() {
             maLoaiNguoiDung: userDetail?.maLoaiNguoiDung,
             maNhom: "GP00"
         },
-        validationSchema: validateInfo,
+        validationSchema: validateInfoAdmin,
         onSubmit: async (values) => {
             try {
                 await userSvervice.fetchUserUpdateApi(values)
@@ -46,7 +46,6 @@ export default function AdminDetail() {
                 })
                 navigate("/admin/user")
             } catch (error) {
-                console.log(error)
                 notification.warning({
                     message: error?.response?.data?.content || "Dữ liệu không đúng",
                     placement: "bottomRight",
@@ -76,10 +75,8 @@ export default function AdminDetail() {
             <h3 style={{ marginBottom: "5%", textTransform: "uppercase" }}>Thông Tin Tài Khoản</h3>
 
             <Form.Item label="Tài Khoản">
-                <Input style={{ width: "50%" }} name='taiKhoan' onChange={formik.handleChange} value={formik.values?.taiKhoan} /> <br />
-                {formik.errors.taiKhoan && formik.touched.taiKhoan && (
-                    <span className="text-danger">{formik.errors.taiKhoan}</span>
-                )}
+                <Input style={{ width: "50%" }} disabled name='taiKhoan' onChange={formik.handleChange} value={formik.values?.taiKhoan} /> <br />
+
             </Form.Item>
             <Form.Item label="Họ Tên">
                 <Input style={{ width: "50%" }} name='hoTen' onChange={formik.handleChange} value={formik.values?.hoTen} /> <br />
@@ -113,7 +110,7 @@ export default function AdminDetail() {
 
             </Form.Item>
             <Form.Item label="Hành Động">
-                <button className='btn btn-success' type="submit">Sửa Thông Tin</button>
+                <button className='btn btn-success' type="submit">Cập nhật</button>
             </Form.Item>
         </Form>
     );

@@ -86,7 +86,6 @@ export default function AdminLaysOut() {
           style={{
             padding: 0,
             background: colorBgContainer,
-            // backgroundColor: "#cbf6e1"
           }}>
           <div className="header-admin container">
             <div className="user-logo">

@@ -1,27 +1,22 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Table, notification } from 'antd';
 import { EditOutlined, DeleteOutlined, CalendarOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
 import { movieService } from '../../../../services/movie';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { removeVietnameseTones } from '../../../../utils/removeVietnames';
-// import { LoadingContext } from "../../../../contexts/LoadingContext/LoadingContext";
 
 
 export default function AdminDetailFirm() {
   const navigate = useNavigate()
   const [listMovie, setListMovie] = useState([])
-  // const [loadingState, setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchListMovie();
   }, [])
 
   const fetchListMovie = async () => {
-    // setLoadingState({ isLoading: true });
     const MovieList = await movieService.fetchMovieListApi("");
     setListMovie(MovieList.data.content)
-    // setLoadingState({ isLoading: false });
   }
 
   const deleteFilm = async (maphim, tenPhim) => {
@@ -110,13 +105,9 @@ export default function AdminDetailFirm() {
 
   const onSearch = async (value) => {
     try {
-      // setLoadingState({ isLoading: true });
       const findMovie = await movieService.fetchGetListUserApi(value)
 
       setListMovie(findMovie.data.content)
-
-      // setLoadingState({ isLoading: false });
-
     } catch (error) {
       console.log(error)
     }
@@ -128,7 +119,6 @@ export default function AdminDetailFirm() {
       <button onClick={() => navigate("/admin/add-film")} className='btn btn-success my-1' style={{ borderRadius: 15 }}>Thêm Phim</button>
       <Search placeholder="Serch Name Phim" style={{ margin: "20px 0", color: "red" }} onSearch={onSearch} enterButton />
       <Table columns={columns} dataSource={data} style={{ border: "1px solid #00000036" }} />
-
     </div>
   );
 }

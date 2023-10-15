@@ -1,9 +1,7 @@
-import { message } from "antd";
 import * as yup from "yup";
 
 const rulesUser = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{7,}$/;
 
-// /^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$/;
 const rulesPass =
   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{0,}$/;
 const rulesName =
@@ -48,12 +46,11 @@ export const validationAddMovie = yup.object().shape({
 });
 
 export const validationAddShowTime = yup.object().shape({
-  maRap: yup.string().required(" (*) vui lòng nhập mô tả"),
-  ngayGioChieu: yup.string().required(" (*) vui lòng không bỏ trống"),
+  maRap: yup.string().required(" (*) Vui lòng không bỏ trống"),
   giaVe: yup
     .number()
-    .min(75000)
-    .max(150000)
+    .min(75000, "giá vé tối thiểu 75.000vnđ")
+    .max(150000, "giá vé tối thiểu 150.000vnđ")
     .required(" (*) vui lòng nhập đánh giá"),
 });
 

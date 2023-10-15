@@ -125,7 +125,7 @@ export default function AdminEditUser() {
 
             </Form.Item>
             <Form.Item label="Hành Động">
-                <button className='btn btn-success' type="submit">Sửa Thông Tin</button>
+                <button className='btn btn-success' type="submit">Cập Nhật</button>
             </Form.Item>
         </Form>
     );
