@@ -17,6 +17,9 @@ import AuthGuard from "../guards/AuthGuard";
 import Booking from "../pages/Booking/Booking";
 import AdminEditFilm from "../pages/Admin/ComponentAdmin/AdminShowTime/AdminEditFlim";
 import Userinfo from "../pages/Userinfo/Userinfo";
+import AdminEditUser from "../pages/Admin/ComponentAdmin/AdminUser/AdminEditUser";
+import AdminDetail from "../pages/Admin/ComponentAdmin/AdminUser/AdminDetail";
+import AdminAddUser from "../pages/Admin/ComponentAdmin/AdminUser/AdminAddUser";
 
 export default function Router() {
   const rooting = useRoutes([
@@ -42,12 +45,12 @@ export default function Router() {
         },
         {
           path: "/thongtincanhan",
-          element: 
-          (
-            <AuthGuard>
-          <Userinfo />,
-          </AuthGuard>
-          ),
+          element:
+            (
+              <AuthGuard>
+                <Userinfo />,
+              </AuthGuard>
+            ),
         },
       ],
     },
@@ -60,12 +63,24 @@ export default function Router() {
       ),
       children: [
         {
-          path: "/admin/detail-film",
+          path: "/admin",
           element: <AdminDetailFirm />,
         },
         {
           path: "/admin/user",
           element: <AdminUser />,
+        },
+        {
+          path: "/admin/user-add",
+          element: <AdminAddUser />,
+        },
+        {
+          path: "/admin/user-edit/:taiKhoan",
+          element: <AdminEditUser />,
+        },
+        {
+          path: "/admin/user-detail/:taiKhoan",
+          element: <AdminDetail />
         },
         {
           path: "/admin/add-film",

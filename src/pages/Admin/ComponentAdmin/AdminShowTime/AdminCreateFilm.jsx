@@ -26,7 +26,7 @@ export default function AdminCreateFilm() {
         placement: "bottomRight",
         duration: 2
       })
-      navigate("/admin/detail-film")
+      navigate("/admin")
     } catch (error) {
       notification.warning({
         message: error?.response?.data?.message || "Thêm Phim Không Thành Công",
@@ -50,7 +50,7 @@ export default function AdminCreateFilm() {
     validationSchema: validationAddMovie,
     onSubmit: (values) => {
 
-      values.maNhom = "GP03"
+      values.maNhom = "GP12"
       let formData = new FormData();
 
       for (let key in values) {
@@ -114,7 +114,7 @@ export default function AdminCreateFilm() {
       onValuesChange={onFormLayoutChange}
       size={componentSize}
     >
-      <h3 style={{ marginBottom: "5%" }}>Thêm Phim</h3>
+      <h3 style={{ marginBottom: "5%", textTransform: "uppercase"  }}>Thêm Phim</h3>
       <Form.Item label="Form Size" name="size">
         <Radio.Group>
           <Radio.Button value="small">Small</Radio.Button>

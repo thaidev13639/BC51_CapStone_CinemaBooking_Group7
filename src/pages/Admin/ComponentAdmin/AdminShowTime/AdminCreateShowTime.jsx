@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form, InputNumber, DatePicker, Select, notification } from 'antd';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { cinemaService } from "../../../../services/cinema";
 import { useFormik } from "formik";
 import moment from "moment";
 import { validationAddShowTime } from "../../../../ValidateYup/ValidateYup";
+
 export default function AdminCreateShowTime() {
   const param = useParams()
+  const navigate = useNavigate()
   const [stateRCP, setStateRCP] = useState({
     heThongRapChieu: [],
     cumRapChieu: [],
@@ -32,8 +34,9 @@ export default function AdminCreateShowTime() {
           duration: 2
         })
       } catch (error) {
-
+        console.log(error)
       }
+      navigate("/admin")
     }
   })
 
@@ -102,7 +105,7 @@ export default function AdminCreateShowTime() {
         }}
         autoComplete="off"
       >
-        <h3 className="text-2xl" style={{ color: "chocolate" }}>Tạo Lịch Chiếu Phim : </h3> <br />
+        <h3 className="text-2xl" style={{ color: "chocolate", textTransform: "uppercase"  }}>Tạo Lịch Chiếu Phim : </h3> <br />
         <h5 className=" mb-5">{param.tenPhim}</h5>
         {/* <img src="" alt="" /> */}
         <Form.Item label="Hệ Thống Rạp" >

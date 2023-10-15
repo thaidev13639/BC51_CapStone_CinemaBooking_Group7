@@ -1,30 +1,33 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { Table, notification } from 'antd';
 import { EditOutlined, DeleteOutlined, CalendarOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
 import { movieService } from '../../../../services/movie';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { removeVietnameseTones } from '../../../../utils/removeVietnames';
+// import { LoadingContext } from "../../../../contexts/LoadingContext/LoadingContext";
 
 
 export default function AdminDetailFirm() {
   const navigate = useNavigate()
   const [listMovie, setListMovie] = useState([])
+  // const [loadingState, setLoadingState] = useContext(LoadingContext);
 
   useEffect(() => {
     fetchListMovie();
   }, [])
 
   const fetchListMovie = async () => {
-    const MovieList = await movieService.fetchMovieListApi();
+    // setLoadingState({ isLoading: true });
+    const MovieList = await movieService.fetchMovieListApi("");
     setListMovie(MovieList.data.content)
+    // setLoadingState({ isLoading: false });
   }
 
   const deleteFilm = async (maphim, tenPhim) => {
     if (window.confirm(`Bạn Muốn xóa Phim ${tenPhim}`)) {
       try {
         await movieService.fetchDeleteFilmApi(maphim)
-        debugger
         notification.success({
           message: `Bạn Đã Xóa ${tenPhim} Thành Công`,
           placement: "topLeft",
@@ -38,7 +41,7 @@ export default function AdminDetailFirm() {
         })
       }
     }
-    navigate("/admin/detail-film")
+    navigate("/admin")
   }
   const { Search } = Input;
 
@@ -106,36 +109,26 @@ export default function AdminDetailFirm() {
   })
 
   const onSearch = async (value) => {
-    if (value !== "") {
-      const keyword = removeVietnameseTones(value).trim().toLowerCase()
+    try {
+      // setLoadingState({ isLoading: true });
+      const findMovie = await movieService.fetchGetListUserApi(value)
 
-      const listMap = listMovie.filter((element) => {
+      setListMovie(findMovie.data.content)
 
-        if (element.tenPhim) {
-          const nameConvert = removeVietnameseTones(element.tenPhim).trim().toLowerCase();
-          const indexof = nameConvert.indexOf(keyword);
+      // setLoadingState({ isLoading: false });
 
-          if (indexof) {
-            return nameConvert.indexOf(keyword) !== -1;
-          } else {
-            return true;
-          }
-        }
-
-      })
-      setListMovie(listMap)
-    } else {
-      fetchListMovie()
+    } catch (error) {
+      console.log(error)
     }
   }
 
   return (
-    <>
-      <h3>Danh Sách Phim </h3>
+    <div style={{ backgroundColor: "#cbf6e1" }}>
+      <h3 >DANH SÁCH PHIM </h3>
       <button onClick={() => navigate("/admin/add-film")} className='btn btn-success my-1' style={{ borderRadius: 15 }}>Thêm Phim</button>
       <Search placeholder="Serch Name Phim" style={{ margin: "20px 0", color: "red" }} onSearch={onSearch} enterButton />
       <Table columns={columns} dataSource={data} style={{ border: "1px solid #00000036" }} />
 
-    </>
+    </div>
   );
 }

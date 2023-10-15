@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 import { removeVietnameseTones } from "../../utils/removeVietnames";
-import { LoadingContext } from "../../contexts/LoadingContext/LoadingContext";
+// import { LoadingContext } from "../../contexts/LoadingContext/LoadingContext";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ export default function Home() {
   const fetchMovieList = async () => {
     // setLoadingState({ isLoading : true});
 
-    const result = await movieService.fetchMovieListApi();
+    const result = await movieService.fetchMovieListApi("");
     console.log(result);
     setMovieList(result.data.content);
     setSearch({
