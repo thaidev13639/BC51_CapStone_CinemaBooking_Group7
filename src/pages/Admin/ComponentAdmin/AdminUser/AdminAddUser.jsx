@@ -1,29 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     Form,
     Input,
-    Select,
     notification
 } from 'antd';
 import { useFormik } from 'formik';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { userSvervice } from '../../../../services/user'
-import { validateInfo } from '../../../../ValidateYup/ValidateYup';
+import { validate } from '../../../../ValidateYup/ValidateYup';
 
 
 export default function AdminAddUser() {
-    const param = useParams()
     const navigate = useNavigate()
-    const [userDetail, setUserDetail] = useState({})
 
-    // useEffect(() => {
-    //     fetchGetUser()
-    // }, [])
-
-    // const fetchGetUser = async () => {
-    //     const user = await userSvervice.fetchUserDetailApi(param.taiKhoan)
-    //     setUserDetail(user.data.content)
-    // }
     const formik = useFormik({
         enableReinitialize: true,
         initialValues: {
@@ -34,9 +23,8 @@ export default function AdminAddUser() {
             soDt: "",
             maNhom: "GP00"
         },
-        validationSchema: validateInfo,
+        validationSchema: validate,
         onSubmit: async (values) => {
-            console.log(values)
             try {
                 await userSvervice.fetchRegisterApi(values)
                 notification.success({
@@ -56,7 +44,6 @@ export default function AdminAddUser() {
         }
     })
 
-    const { Option } = Select;
 
     return (
         <Form className='px-4'

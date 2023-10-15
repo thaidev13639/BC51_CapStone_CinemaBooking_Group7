@@ -48,7 +48,6 @@ export default function AdminEditFilm() {
             })
             navigate("/admin")
         } catch (error) {
-            console.log(error)
             notification.warning({
                 message: error?.response?.data?.content || "Chỉnh Sửa Không Thành Công",
                 placement: "bottomRight",
@@ -72,8 +71,6 @@ export default function AdminEditFilm() {
         },
         validationSchema: validationAddMovie,
         onSubmit: (values) => {
-            
-            console.log(values)
             values.maNhom = "GP12"
             let formData = new FormData();
 
@@ -86,7 +83,6 @@ export default function AdminEditFilm() {
                     }
                 }
             };
-            console.log(formData)
             editFilm(formData)
         }
 
@@ -94,7 +90,6 @@ export default function AdminEditFilm() {
 
     const handleChangeDate = (date) => {
         if (date) {
-            console.log(date)
             console.log(moment(date).format("DD/MM/YYYY"))
             let dateMoment = moment(date.$d).format("DD/MM/YYYY")
             formik.setFieldValue("ngayKhoiChieu", dateMoment)
@@ -120,10 +115,7 @@ export default function AdminEditFilm() {
 
         }
     }
-    console.log(formik.values.ngayKhoiChieu)
-    console.log(stateInfoFilm.ngayKhoiChieu)
 
-    
     const [componentSize, setComponentSize] = useState('default');
     const onFormLayoutChange = ({ size }) => {
         setComponentSize(size);

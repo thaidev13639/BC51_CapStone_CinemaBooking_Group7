@@ -38,7 +38,7 @@ export default function Register() {
   return (
     <div className="register">
       <form className="form-register" onSubmit={form.handleSubmit}>
-        <p className="title-register">Đăng Ký</p>
+        <p className="title-register">ĐĂNG KÝ TÀI KHOẢN</p>
         <p className="message-register">
           Đăng ký ngay và sử dụng dịch vụ.{" "}
         </p>

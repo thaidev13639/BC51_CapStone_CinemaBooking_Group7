@@ -24,8 +24,8 @@ export default function AdminCreateShowTime() {
       maRap: "",
       giaVe: 0
     },
+    validationSchema: validationAddShowTime,
     onSubmit: async (value) => {
-      console.log(value)
       try {
         await cinemaService.fetchCreateShowTime(value);
         notification.success({
@@ -70,7 +70,6 @@ export default function AdminCreateShowTime() {
   }
 
   const handleChangeHTR = async (value) => {
-    console.log(value)
     try {
       const result = await cinemaService.fetchGetCRCApi(value)
       setStateRCP({
@@ -82,16 +81,13 @@ export default function AdminCreateShowTime() {
     }
   }
   const handleChangeCR = (value) => {
-    console.log(value)
     formik.setFieldValue("maRap", value)
   }
   const onOk = (value) => {
     formik.setFieldValue("ngayChieuGioChieu", moment(value).format("DD/MM/YYYY hh:mm:ss"))
-    console.log(value)
   }
   const onChangeDate = (value) => {
     formik.setFieldValue("ngayChieuGioChieu", moment(value).format("DD/MM/YYYY hh:mm:ss"))
-    console.log(value)
   }
   const onChangeNumber = (value) => {
     formik.setFieldValue("giaVe", value)
@@ -105,20 +101,25 @@ export default function AdminCreateShowTime() {
         }}
         autoComplete="off"
       >
-        <h3 className="text-2xl" style={{ color: "chocolate", textTransform: "uppercase"  }}>Tạo Lịch Chiếu Phim : </h3> <br />
+        <h3 className="text-2xl" style={{ color: "chocolate", textTransform: "uppercase" }}>Tạo Lịch Chiếu Phim : </h3> <br />
         <h5 className=" mb-5">{param.tenPhim}</h5>
-        {/* <img src="" alt="" /> */}
         <Form.Item label="Hệ Thống Rạp" >
           <Select options={handlSelectHTR()} onChange={handleChangeHTR} placeholder="Chọn Hệ Thông Rạp" />
         </Form.Item>
         <Form.Item label="Cụm Rạp" >
           <Select options={handlSelectCRC()} onChange={handleChangeCR} placeholder="Chọn Cụm Rạp" />
+          {formik.errors.maRap && formik.touched.maRap && (
+            <span className="text-danger">{formik.errors.maRap}</span>
+          )}
         </Form.Item>
         <Form.Item label="Ngày Chiếu Giờ Chiếu" >
           <DatePicker format={"DD/MM/YYYY hh:mm:ss"} showTime onChange={onChangeDate} onOk={onOk} />
         </Form.Item>
         <Form.Item label="Giá Vé" >
-          <InputNumber min={75000} max={150000} onChange={onChangeNumber} /> vnđ
+          <InputNumber min={75000} max={150000} onChange={onChangeNumber} /> vnđ <br />
+          {formik.errors.giaVe && formik.touched.giaVe && (
+            <span className="text-danger">{formik.errors.giaVe}</span>
+          )}
         </Form.Item>
         <Form.Item
           wrapperCol={{

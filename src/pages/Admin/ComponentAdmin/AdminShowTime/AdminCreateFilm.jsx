@@ -69,7 +69,6 @@ export default function AdminCreateFilm() {
   const handleChangeDate = (date) => {
     if (date) {
       let dateMoment = moment(date.$d).format("DD/MM/YYYY")
-      console.log(dateMoment)
       formik.setFieldValue("ngayKhoiChieu", dateMoment)
     }
   }
@@ -114,7 +113,7 @@ export default function AdminCreateFilm() {
       onValuesChange={onFormLayoutChange}
       size={componentSize}
     >
-      <h3 style={{ marginBottom: "5%", textTransform: "uppercase"  }}>Thêm Phim</h3>
+      <h3 style={{ marginBottom: "5%", textTransform: "uppercase" }}>Thêm Phim</h3>
       <Form.Item label="Form Size" name="size">
         <Radio.Group>
           <Radio.Button value="small">Small</Radio.Button>
