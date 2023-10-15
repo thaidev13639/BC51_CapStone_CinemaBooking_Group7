@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { userSvervice } from "../../../../services/user";
-import { Tabs } from "antd";
+import { Tabs, notification } from "antd";
 import { formatDate } from "../../../../utils/date";
 import { LoadingContext } from "../../../../contexts/LoadingContext/LoadingContext";
 
@@ -19,8 +19,19 @@ export default function HistoryTicket() {
     const result = await userSvervice.fetchUserTicket();
   
     setData(result.data.content.thongTinDatVe);
-
+    
     setLoadingState({ isLoading : false});
+
+    if (result.data.content.thongTinDatVe ==  0 ) {
+      notification.warning({
+        message: "không có thông tin đặt vé",
+        placement: "topRight",
+        duration: 5,
+      });
+    
+    }
+
+    
   };
 
   const renderTabList = () => {

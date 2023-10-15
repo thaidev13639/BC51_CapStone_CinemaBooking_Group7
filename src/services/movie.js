@@ -7,12 +7,16 @@ class MovieService {
         url: `/QuanLyPhim/LayDanhSachPhim?maNhom=GP12&tenPhim=${tenPhim}`,
         method: "GET",
       });
+    }else{
+      return requestApi({
+        url: "/QuanLyPhim/LayDanhSachPhim?maNhom=GP12",
+        method: "GET",
+      });
     }
+     
+    
 
-    return requestApi({
-      url: "/QuanLyPhim/LayDanhSachPhim?maNhom=GP12",
-      method: "GET",
-    });
+    
   }
 
   fetchMovieBannerApi() {

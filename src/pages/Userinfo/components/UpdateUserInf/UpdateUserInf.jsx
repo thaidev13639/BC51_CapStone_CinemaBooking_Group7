@@ -101,23 +101,19 @@ export default function UpdateUserInf() {
         </p>
         <label>
           <input
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
+          
             name="taiKhoan"
-            className={`input-register ${
-              formik.errors.taiKhoan && formik.touched.taiKhoan
-                ? "input-erorr"
-                : ""
-            }`}
+            disabled={true}
+            className="input-register "
             type="text"
             required
             value={formik.values.taiKhoan}
           />
           <span>Account</span>
 
-          {formik.errors.taiKhoan && formik.touched.taiKhoan && (
+          {/* {formik.errors.taiKhoan && formik.touched.taiKhoan && (
             <span className="text-danger">{formik.errors.taiKhoan}</span>
-          )}
+          )} */}
         </label>
         <div className="flex-register">
           <label>

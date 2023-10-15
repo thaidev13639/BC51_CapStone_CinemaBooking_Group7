@@ -149,7 +149,7 @@ if(result){
   notification.success({
     message: "Đặt vé Thành Công!!",
     placement: "topRight",
-    duration: 3,
+    duration: 5,
   });
 }
 navigate(0);
