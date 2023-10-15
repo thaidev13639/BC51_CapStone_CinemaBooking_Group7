@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ticketService } from "../../services/ticket";
 import { filter, sumBy } from "lodash";
-import { Alert, Button, Popconfirm, notification } from "antd";
+import {  Button, Popconfirm, notification } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCouch } from "@fortawesome/free-solid-svg-icons";
 import { LoadingContext } from "../../contexts/LoadingContext/LoadingContext";

@@ -17,7 +17,7 @@ export default function HistoryTicket() {
     setLoadingState({ isLoading : true});
 
     const result = await userSvervice.fetchUserTicket();
-    console.log(result.data.content);
+  
     setData(result.data.content.thongTinDatVe);
 
     setLoadingState({ isLoading : false});

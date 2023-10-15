@@ -21,7 +21,7 @@ export default function ShowTimes() {
     setLoadingState({ isLoading : true});
 
     const result = await cinemaService.fetchShowtimesApi(params.movieId);
-    console.log(result);
+    
     setData(result.data.content.heThongRapChieu);
     setLoadingState({ isLoading : false});
   };
@@ -34,7 +34,6 @@ export default function ShowTimes() {
           tab={
             <a
              
-              // className={`nav-link  text-capitalize ${idx === 0 && "active"}`}
               className="nameCinema"
               data-toggle="pill"
               href={`#${element.maHeThongRap}`}
@@ -51,8 +50,6 @@ export default function ShowTimes() {
            role="tabpanel"
         >
        
-        
-            
           {element.cumRapChieu.map((element) => {
             return (
               <div key={element.maCumRap} className="row mb-5">

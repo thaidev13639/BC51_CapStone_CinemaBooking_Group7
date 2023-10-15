@@ -27,7 +27,7 @@ export default function UpdateUserInf() {
       setLoadingState({ isLoading : true});
       const result = await userSvervice.fetchUserTicket();
       setData(result.data.content);
-      console.log(result.data.content);
+     
       setLoadingState({ isLoading : false});
     } catch (error) {
       notification.warning({
