@@ -38,9 +38,9 @@ export default function Register() {
   return (
     <div className="register">
       <form className="form-register" onSubmit={form.handleSubmit}>
-        <p className="title-register">Register </p>
+        <p className="title-register">Đăng Ký</p>
         <p className="message-register">
-          Signup now and get full access to our app.{" "}
+          Đăng ký ngay và sử dụng dịch vụ.{" "}
         </p>
         <label>
           <input
@@ -53,7 +53,7 @@ export default function Register() {
             type="text"
             required
           />
-          <span>Account</span>
+          <span>Tài Khoản</span>
           {form.errors.taiKhoan && form.touched.taiKhoan && (
             <span className="text-danger">{form.errors.taiKhoan}</span>
           )}
@@ -71,7 +71,7 @@ export default function Register() {
               required
               autoComplete="on"
             />
-            <span>Password</span>
+            <span>Mật Khẩu</span>
             {form.errors.matKhau && form.touched.matKhau && (
               <span className="text-danger">{form.errors.matKhau}</span>
             )}
@@ -90,7 +90,7 @@ export default function Register() {
               required
               autoComplete="on"
             />
-            <span>Confirm Password</span>
+            <span>Xác Nhận Mật Khẩu</span>
             {form.errors.confirmPassWord && form.touched.confirmPassWord && (
               <span className="text-danger">{form.errors.confirmPassWord}</span>
             )}
@@ -107,7 +107,7 @@ export default function Register() {
             type="text"
             required
           />
-          <span>Full Name</span>
+          <span>Họ Và Tên</span>
           {form.errors.hoTen && form.touched.hoTen && (
             <span className="text-danger">{form.errors.hoTen}</span>
           )}
@@ -139,16 +139,16 @@ export default function Register() {
             type="number"
             required
           />
-          <span>Phone Number</span>
+          <span>Số Điện Thoại</span>
           {form.errors.soDt && form.touched.soDt && (
             <span className="text-danger">{form.errors.soDt}</span>
           )}
         </label>
         <button type="submit" className="submit-register">
-          Submit
+          Đăng Ký
         </button>
         <p className="signin-register">
-          Already have an acount ? <Link to="/form/login">Login</Link>{" "}
+          Đâ có tài khoản ? <Link to="/form/login">Đăng Nhập</Link>{" "}
         </p>
       </form>
     </div>

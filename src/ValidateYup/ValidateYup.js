@@ -1,3 +1,4 @@
+import { message } from "antd";
 import * as yup from "yup";
 
 const rulesUser = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{7,}$/;
@@ -14,26 +15,28 @@ export const validate = yup.object().shape({
   taiKhoan: yup
     .string()
     .min(5)
-    .matches(rulesUser, { message: "Pls! enter valid account: name789" })
-    .required("Pls! enter account"),
+    .matches(rulesUser, {
+      message: "(*) Vui Lòng Nhập tài khoản có số: name789",
+    })
+    .required("(*) Vui lòng nhập tài khoản"),
   matKhau: yup
     .string()
     .min(5)
-    .matches(rulesPass, { message: "Pls! create strong password: Name@123" })
-    .required("Pls! enter password"),
+    .matches(rulesPass, { message: "Mật khẩu còn yếu: Name@123" })
+    .required("(*) Vui lòng nhập mật khẩu"),
   confirmPassWord: yup
     .string()
-    .oneOf([yup.ref("matKhau"), null], "password not matched")
-    .required("Password not match"),
+    .oneOf([yup.ref("matKhau"), null], "(*) Mật khẩu chưa đúng")
+    .required("(*) Mật khẩu chưa đúng"),
   email: yup
     .string()
-    .email("Please enter valid email")
-    .required("Plss! enter email"),
-  soDt: yup.string().min(9).max(10).required("Pls! enter phone number"),
+    .email("(*) Vui lòng nhập đúng email @gmail.com")
+    .required("(*) Vui lòng nhập email"),
+  soDt: yup.string().min(9).max(10).required("(*) Vui lòng nhập số điện thoại"),
   hoTen: yup
     .string()
-    .matches(rulesName, { message: "please enter valid Name" })
-    .required("Pls! enter fullname"),
+    .matches(rulesName, { message: "(*) Vui lòng nhập đúng định dạng" })
+    .required("(*) Vui lòng nhập họ tên"),
 });
 
 export const validationAddMovie = yup.object().shape({
@@ -54,26 +57,31 @@ export const validationAddShowTime = yup.object().shape({
     .required(" (*) vui lòng nhập đánh giá"),
 });
 
-
 export const validateInfo = yup.object().shape({
   taiKhoan: yup
     .string()
-    .min(5)
-    .matches(rulesUser, { message: "Pls! enter valid account: name789" })
-    .required("Pls! enter account"),
+    .min(5, "(*) Tối thiếu 5 ký tự")
+    .matches(rulesUser, {
+      message: "(*) Vui lòng nhập tài khoản có ít nhất 4 ký tự và số: name789",
+    })
+    .required("(*) Vui lòng nhập tài khoản"),
   matKhau: yup
     .string()
-    .min(5)
-    .matches(rulesPass, { message: "Pls! create strong password: Name@123" })
-    .required("Pls! enter password"),
-  
+    .min(5, "(*) Mật khẩu tối thiểu 5 ký tự")
+    .matches(rulesPass, { message: "Mật Khẩu còn yếu: Name@123" })
+    .required("(*) Vui lòng nhập mật khẩu"),
+
   email: yup
     .string()
-    .email("Please enter valid email")
-    .required("Plss! enter email"),
-  soDt: yup.string().min(9).max(10).required("Pls! enter phone number"),
+    .email("(*) Vui lòng nhập đúng định dạng @gmail.com")
+    .required("(*) Vui lòng nhập email"),
+  soDt: yup
+    .string()
+    .min(9, "(*) Tối thiểu 9 số")
+    .max(10, "(*) Tối đa 10 số")
+    .required("(*) Vui lòng nhập số điện thoại"),
   hoTen: yup
     .string()
-    .matches(rulesName, { message: "please enter valid Name" })
-    .required("Pls! enter fullname"),
+    .matches(rulesName, { message: "(*) Vui lòng nhập đúng định dạng" })
+    .required("(*) Vui lòng nhập họ và tên"),
 });

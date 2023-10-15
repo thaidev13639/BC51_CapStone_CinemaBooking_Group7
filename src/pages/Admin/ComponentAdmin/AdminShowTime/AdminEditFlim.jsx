@@ -46,11 +46,11 @@ export default function AdminEditFilm() {
                 placement: "bottomRight",
                 duration: 2
             })
-            navigate("/admin/detail-film")
+            navigate("/admin")
         } catch (error) {
             console.log(error)
             notification.warning({
-                message: error?.response?.data?.message || "Chỉnh Sửa Không Thành Công",
+                message: error?.response?.data?.content || "Chỉnh Sửa Không Thành Công",
                 placement: "bottomRight",
                 duration: 3
             })
@@ -74,7 +74,7 @@ export default function AdminEditFilm() {
         onSubmit: (values) => {
             
             console.log(values)
-            values.maNhom = "GP03"
+            values.maNhom = "GP12"
             let formData = new FormData();
 
             for (let key in values) {
@@ -122,6 +122,8 @@ export default function AdminEditFilm() {
     }
     console.log(formik.values.ngayKhoiChieu)
     console.log(stateInfoFilm.ngayKhoiChieu)
+
+    
     const [componentSize, setComponentSize] = useState('default');
     const onFormLayoutChange = ({ size }) => {
         setComponentSize(size);
@@ -142,7 +144,7 @@ export default function AdminEditFilm() {
             onValuesChange={onFormLayoutChange}
             size={componentSize}
         >
-            <h3 style={{ marginBottom: "5%" }}>Chỉnh Sửa Thông Tin Phim</h3>
+            <h3 style={{ marginBottom: "5%", textTransform: "uppercase"  }}>Chỉnh Sửa Thông Tin Phim</h3>
             <Form.Item label="Form Size" name="size">
                 <Radio.Group>
                     <Radio.Button value="small">Small</Radio.Button>

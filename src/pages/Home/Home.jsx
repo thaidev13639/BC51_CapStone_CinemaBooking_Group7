@@ -24,7 +24,7 @@ export default function Home() {
   const fetchMovieList = async () => {
      setLoadingState({ isLoading : true});
 
-    const result = await movieService.fetchMovieListApi();
+    const result = await movieService.fetchMovieListApi("");
     console.log(result);
     setMovieList(result.data.content);
     setSearch({
