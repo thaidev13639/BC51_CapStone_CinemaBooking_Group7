@@ -876,14 +876,14 @@ h3.content::after {
     width: 405px;
   }
 }
-form-register {
+.form-updateInfo {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 20px;
   border-radius: 20px;
   position: relative;
-  background-color: #1a1a1a;
+  background-color: #0e0606;
   color: #fff;
   border: 1px solid #333;
   position: absolute;
@@ -892,7 +892,7 @@ form-register {
   transform: translate(-50%, -50%);
 }
 
-.title-register {
+.title-updateInfo {
   margin: 0;
   font-size: 28px;
   font-weight: 600;
@@ -904,19 +904,19 @@ form-register {
   color: #00bfff;
 }
 
-.title-register::before {
+.title-updateInfo::before {
   width: 18px;
   height: 18px;
 }
 
-.title-register::after {
+.title-updateInfo::after {
   width: 18px;
   height: 18px;
   animation: pulse 1s linear infinite;
 }
 
-.title-register::before,
-.title-register::after {
+.title-updateInfo::before,
+.title-updateInfo::after {
   position: absolute;
   content: "";
   height: 16px;
@@ -926,36 +926,36 @@ form-register {
   background-color: #00bfff;
 }
 
-.message-register,
-.signin-register {
+.message-updateInfo,
+.signin-updateInfo {
   font-size: 14.5px;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.signin-register {
+.signin-updateInfo {
   text-align: center;
 }
 
-.signin-register a:hover {
+.signin-updateInfo a:hover {
   text-decoration: underline royalblue;
 }
 
-.signin-register a {
+.signin-updateInfo a {
   color: #00bfff;
 }
 
-.flex-register {
+.flex-updateInfo {
   display: flex;
   width: 100%;
   gap: 6px;
 }
 
-.form-register label {
+.form-updateInfo label {
   position: relative;
   margin: 0;
 }
 
-.form-register label .input-register {
+.form-updateInfo label .input-updateInfo {
   background-color: #333;
   color: #fff;
   width: 100%;
@@ -965,7 +965,7 @@ form-register {
   border-radius: 10px;
 }
 
-.form-register label .input-register + span {
+.form-updateInfo label .input-updateInfo + span {
   color: rgba(255, 255, 255, 0.5);
   position: absolute;
   left: 10px;
@@ -975,24 +975,24 @@ form-register {
   transition: 0.3s ease;
 }
 
-.form-register label .input-register:placeholder-shown + span {
+.form-updateInfo label .input-updateInfo:placeholder-shown + span {
   top: 12.5px;
   font-size: 0.9em;
 }
 
-.form-register label .input-register:focus + span,
-.form-register label .input-register:valid + span {
+.form-updateInfo label .input-updateInfo:focus + span,
+.form-updateInfo label .input-updateInfo:valid + span {
   color: #00bfff;
   top: 0px;
   font-size: 0.7em;
   font-weight: 600;
 }
 
-.input-register {
+.input-updateInfo {
   font-size: medium;
 }
 
-.submit-register {
+.submit-updateInfo {
   border: none;
   outline: none;
   padding: 10px;
@@ -1003,7 +1003,7 @@ form-register {
   background-color: #00bfff;
 }
 
-.submit-register:hover {
+.submit-updateInfo:hover {
   background-color: rgba(0, 191, 255, 0.5882352941);
 }
 

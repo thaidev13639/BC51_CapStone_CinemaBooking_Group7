@@ -94,9 +94,9 @@ export default function UpdateUserInf() {
 
   return (
     <div className="updateForm">
-      <form className="form-register" onSubmitCapture={formik.handleSubmit}>
-        <p className="title-register">Cập nhật thông tin </p>
-        <p className="message-register">
+      <form className="form-updateInfo " onSubmitCapture={formik.handleSubmit}>
+        <p className="title-updateInfo">Cập nhật thông tin </p>
+        <p className="message-updateInfo">
           Signup now and get full access to our app.{" "}
         </p>
         <label>
@@ -104,24 +104,22 @@ export default function UpdateUserInf() {
           
             name="taiKhoan"
             disabled={true}
-            className="input-register "
+            className="input-updateInfo "
             type="text"
             required
-            value={formik.values.taiKhoan}
+            value={formik.values?.taiKhoan}
           />
           <span>Account</span>
 
-          {/* {formik.errors.taiKhoan && formik.touched.taiKhoan && (
-            <span className="text-danger">{formik.errors.taiKhoan}</span>
-          )} */}
+        
         </label>
-        <div className="flex-register">
+        <div className="flex-updateInfo">
           <label>
             <input
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
               name="matKhau"
-              className={`input-register ${
+              className={`input-updateInfo ${
                 formik.errors.matKhau && formik.touched.matKhau
                   ? "input-erorr"
                   : ""
@@ -129,7 +127,7 @@ export default function UpdateUserInf() {
               type={pasword}
               required
               autoComplete="on"
-              value={formik.values.matKhau}
+              value={formik.values?.matKhau}
             />
 
             <span>Password</span>
@@ -149,12 +147,12 @@ export default function UpdateUserInf() {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             name="hoTen"
-            className={`input-register ${
+            className={`input-updateInfo ${
               formik.errors.hoTen && formik.touched.hoTen ? "input-erorr" : ""
             }`}
             type="text"
             required
-            value={formik.values.hoTen}
+            value={formik.values?.hoTen}
           />
 
           <span>Full Name</span>
@@ -167,12 +165,12 @@ export default function UpdateUserInf() {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             name="email"
-            className={`input-register ${
+            className={`input-updateInfo ${
               formik.errors.email && formik.touched.email ? "input-erorr" : ""
             }`}
             type="text"
             required
-            value={formik.values.email}
+            value={formik.values?.email}
           />
           <span>Email</span>
           {formik.errors.email && formik.touched.email && (
@@ -184,12 +182,12 @@ export default function UpdateUserInf() {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             name="soDt"
-            className={`input-register ${
+            className={`input-updateInfo ${
               formik.errors.soDt && formik.touched.soDt ? "input-erorr" : ""
             }`}
             type="number"
             required
-            value={formik.values.soDt}
+            value={formik.values?.soDt}
           />
           <span>Phone Number</span>
           {formik.errors.soDt && formik.touched.soDt && (
