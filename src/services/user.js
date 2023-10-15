@@ -1,9 +1,15 @@
 import { requestApi } from "../configs/configApi";
 
 class UserService {
-  fetchGetListUserApi = () => {
+  fetchGetListUserApi = (tuKhoa) => {
+    if (tuKhoa !== "") {
+      return requestApi({
+        url: `QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP00&tuKhoa=${tuKhoa}`,
+        method: "GET",
+      });
+    }
     return requestApi({
-      url: "/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP03",
+      url: `/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP00`,
       method: "GET",
     });
   };
@@ -21,17 +27,36 @@ class UserService {
       data,
     });
   };
-  fetchUserTicket = () =>{
+  fetchUserTicket = () => {
     return requestApi({
       url: "/QuanLyNguoiDung/ThongTinTaiKhoan",
       method: "POST",
     });
-  }
-  
-  fetchUserInfo = (data) =>{
+  };
+
+  fetchUserInfo = (data) => {
     return requestApi({
       url: "/QuanLyNguoiDung/CapNhatThongTinNguoiDung",
       method: "PUT",
+      data,
+    });
+  };
+  fetchUserDetailApi(username) {
+    return requestApi({
+      url: `/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${username}`,
+      method: "POST",
+    });
+  }
+  fetchUserDeleteApi(taiKhoan) {
+    return requestApi({
+      url: `/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`,
+      method: "DELETE",
+    });
+  }
+  fetchUserUpdateApi(data) {
+    return requestApi({
+      url: `/QuanLyNguoiDung/CapNhatThongTinNguoiDung`,
+      method: "POST",
       data,
     });
   }

@@ -1,7 +1,14 @@
 import { requestApi } from "../configs/configApi";
 
 class MovieService {
-  fetchMovieListApi() {
+  fetchMovieListApi(tenPhim) {
+    if (tenPhim !== "") {
+      return requestApi({
+        url: `/QuanLyPhim/LayDanhSachPhim?maNhom=GP12&tenPhim=${tenPhim}`,
+        method: "GET",
+      });
+    }
+
     return requestApi({
       url: "/QuanLyPhim/LayDanhSachPhim?maNhom=GP12",
       method: "GET",
@@ -12,7 +19,6 @@ class MovieService {
     return requestApi({
       url: "/QuanLyPhim/LayDanhSachBanner",
       method: "GET",
-      
     });
   }
 
@@ -20,7 +26,6 @@ class MovieService {
     return requestApi({
       url: `/QuanLyPhim/LayThongTinPhim?MaPhim=${movieId}`,
       method: "GET",
-      
     });
   }
 

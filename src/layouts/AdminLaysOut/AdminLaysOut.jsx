@@ -36,8 +36,8 @@ export default function AdminLaysOut() {
   const items = [
     getItem("Home", "/", <PieChartOutlined />),
     getItem("User", "/admin/user", <UserOutlined />),
-    getItem("Firm", "/admin", <DesktopOutlined />, [
-      getItem("Detail Film", "/admin/detail-film"),
+    getItem("Firm", "", <DesktopOutlined />, [
+      getItem("Detail Film", "/admin"),
       getItem("Add Film", "/admin/add-film"),
     ]),
     getItem("Logout", "logout", <FileOutlined />),
@@ -81,15 +81,16 @@ export default function AdminLaysOut() {
           items={items}
         />
       </Sider>
-      <Layout>
+      <Layout style={{ backgroundColor: "#cbf6e1" }}>
         <Header
           style={{
             padding: 0,
             background: colorBgContainer,
+            // backgroundColor: "#cbf6e1"
           }}>
           <div className="header-admin container">
             <div className="user-logo">
-              <div className="chip" style={{ cursor: "pointer" }}>
+              <div className="chip" style={{ cursor: "pointer" }} onClick={() => navigate(`/admin/user-detail/${accountState?.userInfo?.taiKhoan}`)}>
                 <img src={avatar} alt="Person" width={96} height={96} />
                 {accountState?.userInfo?.hoTen}
               </div>
@@ -105,7 +106,8 @@ export default function AdminLaysOut() {
               padding: 24,
               minHeight: 360,
               background: colorBgContainer,
-              marginTop: "5%",
+              marginTop: "1%",
+              backgroundColor: "#cbf6e1"
             }}>
             <Outlet />
           </div>
@@ -113,6 +115,7 @@ export default function AdminLaysOut() {
         <Footer
           style={{
             textAlign: "center",
+            backgroundColor: "#cbf6e1"
           }}>
           Movie ©2023 Created by Hoang Anh and Thai
         </Footer>

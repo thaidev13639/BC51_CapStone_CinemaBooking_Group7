@@ -25,7 +25,7 @@ export default function Home() {
      setLoadingState({ isLoading : true});
 
     const result = await movieService.fetchMovieListApi();
-   
+
     setMovieList(result.data.content);
     setSearch({
       keyword: "",
