@@ -105,7 +105,7 @@ export default function AdminDetailFirm() {
 
   const onSearch = async (value) => {
     try {
-      const findMovie = await movieService.fetchGetListUserApi(value)
+      const findMovie = await movieService.fetchMovieListApi(value)
 
       setListMovie(findMovie.data.content)
     } catch (error) {

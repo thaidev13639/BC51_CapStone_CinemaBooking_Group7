@@ -30,7 +30,38 @@ export const validate = yup.object().shape({
     .string()
     .email("(*) Vui lòng nhập đúng email @gmail.com")
     .required("(*) Vui lòng nhập email"),
-  soDt: yup.string().min(9).max(10).required("(*) Vui lòng nhập số điện thoại"),
+  soDt: yup
+    .string()
+    .min(9, "(*) tối thiếu 9 số")
+    .max(10, "(*) tối đa 10 số")
+    .required("(*) Vui lòng nhập số điện thoại"),
+  hoTen: yup
+    .string()
+    .matches(rulesName, { message: "(*) Vui lòng nhập đúng định dạng" })
+    .required("(*) Vui lòng nhập họ tên"),
+});
+export const validateAdminAddUser = yup.object().shape({
+  taiKhoan: yup
+    .string()
+    .min(5)
+    .matches(rulesUser, {
+      message: "(*) Vui Lòng Nhập tài khoản có số: name789",
+    })
+    .required("(*) Vui lòng nhập tài khoản"),
+  matKhau: yup
+    .string()
+    .min(5)
+    .matches(rulesPass, { message: "Mật khẩu còn yếu: Name@123" })
+    .required("(*) Vui lòng nhập mật khẩu"),
+  email: yup
+    .string()
+    .email("(*) Vui lòng nhập đúng email @gmail.com")
+    .required("(*) Vui lòng nhập email"),
+  soDt: yup
+    .string()
+    .min(9, "tối thiếu 9 số")
+    .max(10, "tối đa 10 số")
+    .required("(*) Vui lòng nhập số điện thoại"),
   hoTen: yup
     .string()
     .matches(rulesName, { message: "(*) Vui lòng nhập đúng định dạng" })
@@ -55,7 +86,6 @@ export const validationAddShowTime = yup.object().shape({
 });
 
 export const validateInfo = yup.object().shape({
- 
   matKhau: yup
     .string()
     .min(5, "(*) Mật khẩu tối thiểu 5 ký tự")
@@ -77,9 +107,7 @@ export const validateInfo = yup.object().shape({
     .required("(*) Vui lòng nhập họ và tên"),
 });
 
-
 export const validateInfoAdmin = yup.object().shape({
- 
   matKhau: yup
     .string()
     .min(5, "(*) Mật khẩu tối thiểu 5 ký tự")

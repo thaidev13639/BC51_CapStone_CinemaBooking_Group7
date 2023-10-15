@@ -7,7 +7,7 @@ import {
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { userSvervice } from '../../../../services/user'
-import { validate } from '../../../../ValidateYup/ValidateYup';
+import { validateAdminAddUser } from '../../../../ValidateYup/ValidateYup';
 
 
 export default function AdminAddUser() {
@@ -23,7 +23,7 @@ export default function AdminAddUser() {
             soDt: "",
             maNhom: "GP00"
         },
-        validationSchema: validate,
+        validationSchema: validateAdminAddUser,
         onSubmit: async (values) => {
             try {
                 await userSvervice.fetchRegisterApi(values)
